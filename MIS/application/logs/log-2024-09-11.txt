@@ -1,0 +1,1 @@
+ERROR - 2024-09-11 16:19:22 --> Severity: Core Warning --> PHP Startup: Unable to load dynamic library 'php_mysql.dll' (tried: C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_mysql.dll (The specified module could not be found.), C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_php_mysql.dll.dll (The specified module could not be found.)) Unknown 0

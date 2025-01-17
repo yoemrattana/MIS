@@ -1,0 +1,3 @@
+Options +FollowSymLinks
+RewriteEngine on
+php_admin_flag safe_mode Off

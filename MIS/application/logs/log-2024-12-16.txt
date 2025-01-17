@@ -1,0 +1,102 @@
+ERROR - 2024-12-16 08:54:14 --> Severity: Core Warning --> PHP Startup: Unable to load dynamic library 'php_mysql.dll' (tried: C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_mysql.dll (The specified module could not be found.), C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_php_mysql.dll.dll (The specified module could not be found.)) Unknown 0
+ERROR - 2024-12-16 09:03:38 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Conversion failed when converting the nvarchar value 'e488d8e3-c900-457a-a166-0ea20bb7a06e' to data type int. - Invalid query: SELECT *
+FROM "tblEvent"
+WHERE "Rec_ID" = N'e488d8e3-c900-457a-a166-0ea20bb7a06e'
+ERROR - 2024-12-16 09:03:50 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Conversion failed when converting the nvarchar value 'e488d8e3-c900-457a-a166-0ea20bb7a06e' to data type int. - Invalid query: SELECT *
+FROM "tblEvent"
+WHERE "Rec_ID" = N'e488d8e3-c900-457a-a166-0ea20bb7a06e'
+ERROR - 2024-12-16 09:03:51 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Conversion failed when converting the nvarchar value 'e488d8e3-c900-457a-a166-0ea20bb7a06e' to data type int. - Invalid query: SELECT *
+FROM "tblEvent"
+WHERE "Rec_ID" = N'e488d8e3-c900-457a-a166-0ea20bb7a06e'
+ERROR - 2024-12-16 09:03:53 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Conversion failed when converting the nvarchar value 'e488d8e3-c900-457a-a166-0ea20bb7a06e' to data type int. - Invalid query: SELECT *
+FROM "tblEvent"
+WHERE "Rec_ID" = N'e488d8e3-c900-457a-a166-0ea20bb7a06e'
+ERROR - 2024-12-16 09:15:21 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'EventNameEN'. - Invalid query: UPDATE "tblEventParticipant" SET "ParticipantName" = N'dfa', "EventID" = N'6', "EventDate" = N'', "WillAttend" = N'1', "Attended" = N'', "Comment" = N'xzcz', "Organization" = N'CX', "InitTime" = N'', "Scaned" = N'', "ConfirmedDate" = N'2024-12-09 08:28:18.110', "InitUser" = N'', "ModiTime" = N'2024-12-16 09:15:21.376', "ModiUser" = N'RattanaMIS', "Uuid" = N'', "EventNameEN" = N'Training Workshop to the Health Facilities Level about using MIS Application and its new feature', "EventUuid" = N''
+WHERE "Rec_ID" = N'2'
+ERROR - 2024-12-16 09:16:41 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'EventNameEN'. - Invalid query: UPDATE "tblEventParticipant" SET "ParticipantName" = N'dfa', "EventID" = N'6', "EventDate" = N'', "WillAttend" = N'1', "Attended" = N'', "Comment" = N'xzcz', "Organization" = N'CX', "InitTime" = N'', "Scaned" = N'', "ConfirmedDate" = N'2024-12-09 08:28:18.110', "InitUser" = N'', "ModiTime" = N'2024-12-16 09:16:41.019', "ModiUser" = N'RattanaMIS', "Uuid" = N'', "EventNameEN" = N'Training Workshop to the Health Facilities Level about using MIS Application and its new feature', "EventUuid" = N''
+WHERE "Rec_ID" = N'2'
+ERROR - 2024-12-16 09:17:06 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'EventUuid'. - Invalid query: UPDATE "tblEventParticipant" SET "ParticipantName" = N'dfa', "EventID" = N'6', "EventDate" = N'', "WillAttend" = N'1', "Attended" = N'', "Comment" = N'xzcz', "Organization" = N'CX', "InitTime" = N'', "Scaned" = N'', "ConfirmedDate" = N'2024-12-09 08:28:18.110', "InitUser" = N'', "ModiTime" = N'2024-12-16 09:17:06.361', "ModiUser" = N'RattanaMIS', "Uuid" = N'', "EventUuid" = N''
+WHERE "Rec_ID" = N'2'
+ERROR - 2024-12-16 10:14:58 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Conversion failed when converting the nvarchar value 'd0cf8f65-37db-4592-a575-18d7f907fddd' to data type int. - Invalid query: SELECT *
+FROM "tblEventParticipant"
+WHERE "Rec_ID" = N'd0cf8f65-37db-4592-a575-18d7f907fddd'
+ERROR - 2024-12-16 10:16:28 --> Severity: Notice --> Undefined variable: participantUuid D:\MIS\MIS\application\controllers\Invitation.php 9
+ERROR - 2024-12-16 10:16:29 --> Severity: Notice --> Undefined variable: participantUuid D:\MIS\MIS\application\controllers\Invitation.php 9
+ERROR - 2024-12-16 10:16:35 --> Severity: Notice --> Undefined variable: participantUuid D:\MIS\MIS\application\controllers\Invitation.php 9
+ERROR - 2024-12-16 10:17:11 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Conversion failed when converting the varchar value 'd0cf8f65-37db-4592-a575-18d7f907fddd' to data type int. - Invalid query: SELECT *
+FROM "tblEventParticipant"
+WHERE "Uuid" = 0
+ERROR - 2024-12-16 10:17:14 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Conversion failed when converting the varchar value 'd0cf8f65-37db-4592-a575-18d7f907fddd' to data type int. - Invalid query: SELECT *
+FROM "tblEventParticipant"
+WHERE "Uuid" = 0
+ERROR - 2024-12-16 10:17:26 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Conversion failed when converting the varchar value 'd0cf8f65-37db-4592-a575-18d7f907fddd' to data type int. - Invalid query: SELECT *
+FROM "tblEventParticipant"
+WHERE "Uuid" = 0
+ERROR - 2024-12-16 10:17:36 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Conversion failed when converting the varchar value 'd0cf8f65-37db-4592-a575-18d7f907fddd' to data type int. - Invalid query: SELECT *
+FROM "tblEventParticipant"
+WHERE "Uuid" = 0
+ERROR - 2024-12-16 10:18:17 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Conversion failed when converting the varchar value 'd0cf8f65-37db-4592-a575-18d7f907fddd' to data type int. - Invalid query: SELECT *
+FROM "tblEventParticipant"
+WHERE "Uuid" = 0
+ERROR - 2024-12-16 10:18:47 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Conversion failed when converting the varchar value 'd0cf8f65-37db-4592-a575-18d7f907fddd' to data type int. - Invalid query: SELECT *
+FROM "tblEventParticipant"
+WHERE "Uuid" = 0
+ERROR - 2024-12-16 10:19:16 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Conversion failed when converting the varchar value 'd0cf8f65-37db-4592-a575-18d7f907fddd' to data type int. - Invalid query: SELECT *
+FROM "tblEventParticipant"
+WHERE "Uuid" = 0
+ERROR - 2024-12-16 10:19:35 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Conversion failed when converting the varchar value 'd0cf8f65-37db-4592-a575-18d7f907fddd' to data type int. - Invalid query: SELECT *
+FROM "tblEventParticipant"
+WHERE "Uuid" = 0
+ERROR - 2024-12-16 10:25:19 --> 404 Page Not Found: 
+ERROR - 2024-12-16 10:26:14 --> 404 Page Not Found: 
+ERROR - 2024-12-16 10:30:38 --> Severity: error --> Exception: syntax error, unexpected '$this' (T_VARIABLE) D:\MIS\MIS\application\controllers\Invitation.php 29
+ERROR - 2024-12-16 10:30:43 --> Severity: error --> Exception: syntax error, unexpected '$this' (T_VARIABLE) D:\MIS\MIS\application\controllers\Invitation.php 29
+ERROR - 2024-12-16 10:30:49 --> Severity: error --> Exception: syntax error, unexpected '$this' (T_VARIABLE) D:\MIS\MIS\application\controllers\Invitation.php 29
+ERROR - 2024-12-16 10:55:58 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Rec_ID'. - Invalid query: select a.*, EventNameEN, b.Uuid as EventUuid from tblEventParticipant as a
+                join tblEvent as b on a.EventID = b.Rec_ID
+ERROR - 2024-12-16 11:10:18 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Uuid'. - Invalid query: SELECT *
+FROM "tblEvent"
+WHERE "Uuid" = N'22'
+ERROR - 2024-12-16 11:13:25 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Uuid'. - Invalid query: SELECT *
+FROM "tblEvent"
+WHERE "Uuid" = N'675fa8d3b4c72'
+ERROR - 2024-12-16 11:18:12 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Uuid'. - Invalid query: SELECT *
+FROM "tblEvent"
+WHERE "Uuid" = N'675faa0049d63'
+ERROR - 2024-12-16 11:20:55 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Uuid'. - Invalid query: SELECT *
+FROM "tblEvent"
+WHERE "Uuid" = N'675faa0049d63'
+ERROR - 2024-12-16 11:35:04 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near 'BEE0A6FD69D39AAB3DA464E1E855059'. - Invalid query: select a.*, EventNameEN from tblEventParticipant as a
+                join tblEvent as b on a.EventID = b.Rec_ID where a.Rec_ID = 8BEE0A6FD69D39AAB3DA464E1E855059
+ERROR - 2024-12-16 11:38:54 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Uuid'. - Invalid query: SELECT *
+FROM "tblEventParticipant"
+WHERE "Uuid" = N'24A8D451AD0111EB06229077F5A48198'
+ERROR - 2024-12-16 20:16:18 --> Severity: Core Warning --> PHP Startup: Unable to load dynamic library 'php_mysql.dll' (tried: C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_mysql.dll (The specified module could not be found.), C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_php_mysql.dll.dll (The specified module could not be found.)) Unknown 0
+ERROR - 2024-12-16 22:11:01 --> Severity: Compile Error --> Namespace declaration statement has to be the very first statement or after any declare call in the script D:\MIS\MIS\vendor\message\src\MultiMessage.php 6
+ERROR - 2024-12-16 22:11:36 --> Severity: Warning --> file_get_contents(D:\MIS\MIS/media/certication/notification-38c9f-firebase-adminsdk-s9dwx-ef83d6d8fa.json): failed to open stream: No such file or directory D:\MIS\MIS\vendor\message\src\MultiMessage.php 29
+ERROR - 2024-12-16 22:12:33 --> Severity: error --> Exception: cURL error 60: SSL certificate problem: unable to get local issuer certificate (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) D:\MIS\MIS\vendor\guzzlehttp\guzzle\src\Handler\CurlFactory.php 201
+ERROR - 2024-12-16 22:14:57 --> Severity: error --> Exception: Cannot use object of type stdClass as array D:\MIS\MIS\vendor\google\auth\src\Credentials\ServiceAccountCredentials.php 152
+ERROR - 2024-12-16 22:15:17 --> Severity: error --> Exception: Cannot use object of type stdClass as array D:\MIS\MIS\vendor\google\auth\src\Credentials\ServiceAccountCredentials.php 152
+ERROR - 2024-12-16 22:15:18 --> Severity: error --> Exception: Cannot use object of type stdClass as array D:\MIS\MIS\vendor\google\auth\src\Credentials\ServiceAccountCredentials.php 152
+ERROR - 2024-12-16 22:15:19 --> Severity: error --> Exception: Cannot use object of type stdClass as array D:\MIS\MIS\vendor\google\auth\src\Credentials\ServiceAccountCredentials.php 152
+ERROR - 2024-12-16 22:15:19 --> Severity: error --> Exception: Cannot use object of type stdClass as array D:\MIS\MIS\vendor\google\auth\src\Credentials\ServiceAccountCredentials.php 152
+ERROR - 2024-12-16 22:15:19 --> Severity: error --> Exception: Cannot use object of type stdClass as array D:\MIS\MIS\vendor\google\auth\src\Credentials\ServiceAccountCredentials.php 152
+ERROR - 2024-12-16 22:15:19 --> Severity: error --> Exception: Cannot use object of type stdClass as array D:\MIS\MIS\vendor\google\auth\src\Credentials\ServiceAccountCredentials.php 152
+ERROR - 2024-12-16 22:15:19 --> Severity: error --> Exception: Cannot use object of type stdClass as array D:\MIS\MIS\vendor\google\auth\src\Credentials\ServiceAccountCredentials.php 152
+ERROR - 2024-12-16 22:15:49 --> Severity: Notice --> Undefined variable: accessToken D:\MIS\MIS\vendor\message\src\MultiMessage.php 35
+ERROR - 2024-12-16 22:16:05 --> Severity: error --> Exception: cURL error 60: SSL certificate problem: unable to get local issuer certificate (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) D:\MIS\MIS\vendor\guzzlehttp\guzzle\src\Handler\CurlFactory.php 201
+ERROR - 2024-12-16 22:16:52 --> Severity: error --> Exception: cURL error 60: SSL certificate problem: unable to get local issuer certificate (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) D:\MIS\MIS\vendor\guzzlehttp\guzzle\src\Handler\CurlFactory.php 201
+ERROR - 2024-12-16 22:16:53 --> Severity: error --> Exception: cURL error 60: SSL certificate problem: unable to get local issuer certificate (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) D:\MIS\MIS\vendor\guzzlehttp\guzzle\src\Handler\CurlFactory.php 201
+ERROR - 2024-12-16 22:16:54 --> Severity: error --> Exception: cURL error 60: SSL certificate problem: unable to get local issuer certificate (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) D:\MIS\MIS\vendor\guzzlehttp\guzzle\src\Handler\CurlFactory.php 201
+ERROR - 2024-12-16 22:20:49 --> Severity: error --> Exception: Class 'Message\ServiceAccountCredential2s' not found D:\MIS\MIS\vendor\message\src\MultiMessage.php 27
+ERROR - 2024-12-16 22:31:31 --> Severity: error --> Exception: cURL error 60: SSL certificate problem: unable to get local issuer certificate (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) D:\MIS\MIS\vendor\guzzlehttp\guzzle\src\Handler\CurlFactory.php 201
+ERROR - 2024-12-16 22:34:51 --> Severity: error --> Exception: Call to undefined function Message\setDefaultOption() D:\MIS\MIS\vendor\message\src\MultiMessage.php 30
+ERROR - 2024-12-16 22:35:18 --> Severity: error --> Exception: syntax error, unexpected '->' (T_OBJECT_OPERATOR) D:\MIS\MIS\vendor\message\src\MultiMessage.php 30
+ERROR - 2024-12-16 22:36:20 --> Severity: error --> Exception: cURL error 60: SSL certificate problem: unable to get local issuer certificate (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) D:\MIS\MIS\vendor\guzzlehttp\guzzle\src\Handler\CurlFactory.php 201
+ERROR - 2024-12-16 22:36:36 --> Severity: error --> Exception: cURL error 60: SSL certificate problem: unable to get local issuer certificate (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) D:\MIS\MIS\vendor\guzzlehttp\guzzle\src\Handler\CurlFactory.php 201
+ERROR - 2024-12-16 22:37:11 --> Severity: error --> Exception: Call to undefined method Google\Auth\Credentials\ServiceAccountCredentials::setDefaultOption() D:\MIS\MIS\vendor\message\src\MultiMessage.php 32
+ERROR - 2024-12-16 22:37:13 --> Severity: error --> Exception: Call to undefined method Google\Auth\Credentials\ServiceAccountCredentials::setDefaultOption() D:\MIS\MIS\vendor\message\src\MultiMessage.php 32
+ERROR - 2024-12-16 22:41:05 --> Severity: error --> Exception: Call to undefined method Google\Auth\Credentials\ServiceAccountCredentials::setDefaultOption() D:\MIS\MIS\vendor\message\src\MultiMessage.php 32
+ERROR - 2024-12-16 22:41:07 --> Severity: error --> Exception: Call to undefined method Google\Auth\Credentials\ServiceAccountCredentials::setDefaultOption() D:\MIS\MIS\vendor\message\src\MultiMessage.php 32
+ERROR - 2024-12-16 22:41:08 --> Severity: error --> Exception: Call to undefined method Google\Auth\Credentials\ServiceAccountCredentials::setDefaultOption() D:\MIS\MIS\vendor\message\src\MultiMessage.php 32
+ERROR - 2024-12-16 22:41:17 --> Severity: error --> Exception: cURL error 60: SSL certificate problem: unable to get local issuer certificate (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) D:\MIS\MIS\vendor\guzzlehttp\guzzle\src\Handler\CurlFactory.php 201

@@ -1,0 +1,48 @@
+﻿.cssload-container div {
+	width: 20px;
+	height: 20px;
+	background-color: #337ab7;
+	border-radius: 50%;
+	position: absolute;
+	top: 40%;
+	left: -25px;
+}
+
+.cssload-container div:nth-child(1) {
+	animation: cssload-move 2s infinite cubic-bezier(0.2, 0.64, 0.81, 0.23);
+	-moz-animation: cssload-move 2s infinite cubic-bezier(0.2, 0.64, 0.81, 0.23);
+	-webkit-animation: cssload-move 2s infinite cubic-bezier(0.2, 0.64, 0.81, 0.23);
+}
+
+.cssload-container div:nth-child(2) {
+	animation: cssload-move 2s 300ms infinite cubic-bezier(0.2, 0.64, 0.81, 0.23);
+	-webkit-animation: cssload-move 2s 300ms infinite cubic-bezier(0.2, 0.64, 0.81, 0.23);
+	-moz-animation: cssload-move 2s 300ms infinite cubic-bezier(0.2, 0.64, 0.81, 0.23);
+}
+
+.cssload-container div:nth-child(3) {
+	animation: cssload-move 2s 600ms infinite cubic-bezier(0.2, 0.64, 0.81, 0.23);
+	-webkit-animation: cssload-move 2s 600ms infinite cubic-bezier(0.2, 0.64, 0.81, 0.23);
+	-moz-animation: cssload-move 2s 600ms infinite cubic-bezier(0.2, 0.64, 0.81, 0.23);
+}
+
+.cssload-container div:nth-child(4) {
+	animation: cssload-move 2s 900ms infinite cubic-bezier(0.2, 0.64, 0.81, 0.23);
+	-webkit-animation: cssload-move 2s 900ms infinite cubic-bezier(0.2, 0.64, 0.81, 0.23);
+	-moz-animation: cssload-move 2s 900ms infinite cubic-bezier(0.2, 0.64, 0.81, 0.23);
+}
+
+@keyframes cssload-move {
+	0% { left: -15px; }
+	100% { left: 100%; }
+}
+
+@-webkit-keyframes cssload-move {
+	0% { left: -15px; }
+	100% { left: 100%; }
+}
+
+@-moz-keyframes cssload-move {
+	0% { left: -15px; }
+	100% { left: 100%; }
+}

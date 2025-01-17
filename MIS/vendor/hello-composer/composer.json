@@ -1,0 +1,10 @@
+{
+    "name": "ourcodeworld/hello-composer",
+    "type": "package",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "ourcodeworld\\HelloComposer\\": "src/"
+        }
+    }
+}

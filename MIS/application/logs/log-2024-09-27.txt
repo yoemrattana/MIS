@@ -1,0 +1,90 @@
+ERROR - 2024-09-27 08:28:52 --> Severity: Core Warning --> PHP Startup: Unable to load dynamic library 'php_mysql.dll' (tried: C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_mysql.dll (The specified module could not be found.), C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_php_mysql.dll.dll (The specified module could not be found.)) Unknown 0
+ERROR - 2024-09-27 08:52:17 --> Severity: Core Warning --> PHP Startup: Unable to load dynamic library 'php_mysql.dll' (tried: C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_mysql.dll (The specified module could not be found.), C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_php_mysql.dll.dll (The specified module could not be found.)) Unknown 0
+ERROR - 2024-09-27 09:02:18 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near the keyword 'as'. - Invalid query: WITH T as (
+	                select PatientCode, NameK,Age, Sex, Diagnosis, Weight, Month, Year, DateCase, ID as Code_Facility_T, Code_Vill_t, LEFT(Code_Vill_t,8) as CodeVill, Rec_ID, 'HC' as Type
+	                from tblHFActivityCases
+	                where year = '2024' and Positive = 'P'
+
+	                union all
+
+	                select PatientCode, NameK,Age, Sex, Diagnosis, Weight, Month, Year, DateCase, HCCode as Code_Facility_T, ISNULL(Address, ID) as Address,LEFT(ISNULL(Address, ID),8) as CodeVill, Rec_ID, 'VMW' as Type
+	                from tblVMWActivityCases as a
+	                join tblCensusVillage as b on a.ID = b.Code_Vill_T
+	                where year = '2024' and Positive = 'P'
+                )
+
+                select a.*, Code_OD_T, Code_Prov_N, c.Rec_ID as CI_ID, iif(c.Rec_ID is null , 0, 1) as Done
+                ,NotDo, Completed, ReasonNotDo, d.Rec_ID as NoteID, d.ToOD, d.Note
+                from T as a
+                join tblHFCodes as b on a.Code_Facility_T = b.Code_Facility_T
+                left join tblMRRT_Foci as c on a.Rec_ID = c.Case_ID and c.Case_Type = a.Type
+                left join
+                (
+                    select a.*, Code_Prov_T as Prov_Code from tblMRRTCaseTransfer as as a
+                    join tblProvince as b on a.Code_Prov_T = b.Code_Prov_T
+                )
+                as d on  a.Rec_ID = d.Case_ID and d.Case_Type = a.Type
+                where
+                (Code_Prov_N = '' or '' = '')
+                and (Code_OD_T = '' or '' = '')
+                and (a.Code_Facility_T = '' or '' = '')
+                or d.ToOD = ''
+                order by Month
+ERROR - 2024-09-27 09:02:36 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Code_Prov_T'. - Invalid query: WITH T as (
+	                select PatientCode, NameK,Age, Sex, Diagnosis, Weight, Month, Year, DateCase, ID as Code_Facility_T, Code_Vill_t, LEFT(Code_Vill_t,8) as CodeVill, Rec_ID, 'HC' as Type
+	                from tblHFActivityCases
+	                where year = '2024' and Positive = 'P'
+
+	                union all
+
+	                select PatientCode, NameK,Age, Sex, Diagnosis, Weight, Month, Year, DateCase, HCCode as Code_Facility_T, ISNULL(Address, ID) as Address,LEFT(ISNULL(Address, ID),8) as CodeVill, Rec_ID, 'VMW' as Type
+	                from tblVMWActivityCases as a
+	                join tblCensusVillage as b on a.ID = b.Code_Vill_T
+	                where year = '2024' and Positive = 'P'
+                )
+
+                select a.*, Code_OD_T, Code_Prov_N, c.Rec_ID as CI_ID, iif(c.Rec_ID is null , 0, 1) as Done
+                ,NotDo, Completed, ReasonNotDo, d.Rec_ID as NoteID, d.ToOD, d.Note
+                from T as a
+                join tblHFCodes as b on a.Code_Facility_T = b.Code_Facility_T
+                left join tblMRRT_Foci as c on a.Rec_ID = c.Case_ID and c.Case_Type = a.Type
+                left join
+                (
+                    select a.*, Code_Prov_T as Prov_Code from tblMRRTCaseTransfer as  a
+                    join tblProvince as b on a.Code_Prov_T = b.Code_Prov_T
+                )
+                as d on  a.Rec_ID = d.Case_ID and d.Case_Type = a.Type
+                where
+                (Code_Prov_N = '' or '' = '')
+                and (Code_OD_T = '' or '' = '')
+                and (a.Code_Facility_T = '' or '' = '')
+                or d.ToOD = ''
+                order by Month
+ERROR - 2024-09-27 10:41:35 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Code_Regional_T'. - Invalid query: select Code_Regional_T, Name_Regional_E, Name_Regional_K from tblMLRegion
+ERROR - 2024-09-27 10:42:30 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Name_Regional_E'. - Invalid query: select Code_Regional_T, Name_Regional_E, Name_Regional_K from tblMLRegion
+ERROR - 2024-09-27 10:47:20 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Code_Region_T'. - Invalid query: select a.*, Name_Prov_E, Name_Prov_K
+				from tblMLGroup as a 
+				join tblProvince as b on a.Code_Prov_T = b.Code_Prov_T
+				join tblMLUnit as c on a.Code_Unit_T = c.Code_Unit_T
+				join tblMLGroup as d on c.Code_Region_T = d.Code_Regional_T
+ERROR - 2024-09-27 10:48:26 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Code_Region_T'. - Invalid query: select a.*, Name_Prov_E, Name_Prov_K
+				from tblMLGroup as a 
+				join tblProvince as b on a.Code_Prov_T = b.Code_Prov_T
+				join tblMLUnit as c on a.Code_Unit_T = c.Code_Unit_T
+				join tblMLRegion as d on c.Code_Region_T = d.Code_Regional_T
+ERROR - 2024-09-27 10:49:02 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Code_Region_T'. - Invalid query: select a.*, Name_Prov_E, Name_Prov_K
+				from tblMLGroup as a 
+				join tblProvince as b on a.Code_Prov_T = b.Code_Prov_T
+				join tblMLUnit as c on a.Code_Unit_T = c.Code_Unit_T
+				join tblMLRegion as d on c.Code_Regional_T = d.Code_Region_T
+ERROR - 2024-09-27 11:39:58 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Code_Regional_T'. - Invalid query: INSERT INTO "tblMLGroup" ("Code_Regional_T", "Code_Unit_T", "Code_Group_T", "Name_Group_E", "Name_Group_K", "Code_Prov_T") VALUES (N'01', N'02', 501, N'test', N'test', N'01')
+ERROR - 2024-09-27 11:40:34 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Ambiguous column name 'Rec_ID'. - Invalid query: select a.*, Name_Prov_E, Name_Prov_K, Name_Unit_E, Name_Unit_K, Name_Regional_E, Name_Regional_K, d.Code_Regional_T, c.Code_Unit_T
+				from tblMLGroup as a
+				join tblProvince as b on a.Code_Prov_T = b.Code_Prov_T
+				join tblMLUnit as c on a.Code_Unit_T = c.Code_Unit_T
+				join tblMLRegion as d on c.Code_Regional_T = d.Code_Regional_T
+				where Rec_ID = 62
+ERROR - 2024-09-27 13:39:04 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Code_Unit_T'. - Invalid query: UPDATE "tblMLRegion" SET "Name_Unit_E" = N'Department of Health', "Name_Unit_K" = N'នាយកដ្ឋានសុខាភិបាល(ភ្នំពេញ)
+ Department of Health'
+WHERE "Code_Unit_T" = N'17'
+ERROR - 2024-09-27 15:25:08 --> Severity: Core Warning --> PHP Startup: Unable to load dynamic library 'php_mysql.dll' (tried: C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_mysql.dll (The specified module could not be found.), C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_php_mysql.dll.dll (The specified module could not be found.)) Unknown 0

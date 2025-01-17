@@ -1,0 +1,30 @@
+ERROR - 2024-10-07 08:38:37 --> Severity: Core Warning --> PHP Startup: Unable to load dynamic library 'php_mysql.dll' (tried: C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_mysql.dll (The specified module could not be found.), C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_php_mysql.dll.dll (The specified module could not be found.)) Unknown 0
+ERROR - 2024-10-07 09:15:03 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near 'd'. - Invalid query: WITH T as (
+	                select PatientCode, NameK,Age, Sex, Diagnosis, Weight, Month, Year, DateCase, ID as Code_Facility_T, Rec_ID, 'HC' as Type
+	                from tblHFActivityCases
+	                where year = '2024' and Positive = 'P'
+
+	                union all
+
+	                select PatientCode, NameK,Age, Sex, Diagnosis, Weight, Month, Year, DateCase, HCCode as Code_Facility_T, Rec_ID, 'VMW' as Type
+	                from tblVMWActivityCases as a
+	                join tblCensusVillage as b on a.ID = b.Code_Vill_T
+	                where year = '2024' and Positive = 'P'
+                )
+
+                select a.*, Code_OD_T, Code_Prov_N, c.Rec_ID as CICC_ID
+                d.ToOD, d.Note, d.Prov_Code
+                from T as a
+                join tblHFCodes as b on a.Code_Facility_T = b.Code_Facility_T
+                left join tblMRRT_CICC as c on a.Rec_ID = c.Case_ID and c.Case_Type = a.Type
+                left join
+                (
+                    select a.*, Code_Prov_T as Prov_Code from tblMRRTCaseTransfer as  a
+                    join tblOD as b on a.ToOD = b.Code_OD_T
+                )
+                as d on  a.Rec_ID = d.Case_ID and d.Case_Type = a.Type
+                where (Code_Prov_N = '' or '' = '')
+                and (Code_OD_T = '' or '' = '')
+                and (a.Code_Facility_T = '' or '' = '')
+                or d.ToOD = ''
+                order by Month

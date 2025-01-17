@@ -1,0 +1,14 @@
+ERROR - 2024-09-13 08:46:26 --> Severity: Core Warning --> PHP Startup: Unable to load dynamic library 'php_mysql.dll' (tried: C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_mysql.dll (The specified module could not be found.), C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_php_mysql.dll.dll (The specified module could not be found.)) Unknown 0
+ERROR - 2024-09-13 09:02:34 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Column, parameter, or variable #1: Cannot find data type MAX. - Invalid query: select Name_Prov_E, Name_OD_E, Name_Facility_E,
+                    VisitorName, Schedule, VisitDate,CaseQty,Interest,NextVisitDate, J.Question, J.Answer
+                    from tblChecklistCMEPPharmacy as a
+                    CROSS APPLY OPENJSON (Detail)
+                    WITH (
+	                    Question varchar(MAX),
+	                    Answer MAX
+                    ) AS J
+                    join tblHFCodes as b on a.Code_Facility_T = b.Code_Facility_T
+                    join tblProvince as d on b.Code_Prov_N = d.Code_Prov_T
+                    where Deleted = 0
+ERROR - 2024-09-13 09:36:34 --> Severity: Notice --> Undefined variable: sql D:\MIS\MIS\application\controllers\Checklist.php 436
+ERROR - 2024-09-13 11:04:39 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'tblChecklistStockODDetail'. - Invalid query: select * from tblChecklistStockODDetail

@@ -1,0 +1,65 @@
+ERROR - 2024-11-18 10:15:05 --> Severity: Core Warning --> PHP Startup: Unable to load dynamic library 'php_mysql.dll' (tried: C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_mysql.dll (The specified module could not be found.), C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_php_mysql.dll.dll (The specified module could not be found.)) Unknown 0
+ERROR - 2024-11-18 10:15:23 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Name_Facility_T'. - Invalid query: select c.Name_Prov_E, Name_OD_E, Name_Facility_T, c.Code_Prov_T, b.Code_OD_T, a.* from tblChecklistPv as a
+                join tblHFCodes as b on a.Code_Facility_T = b.Code_Facility_T
+                join tblProvince as c on b.Code_Prov_N =  c.Code_Prov_T
+                where ('' = '' or Code_Prov_N = '')
+				and ('' = '' or Code_OD_T = '')
+				and ('' = '' or a.Code_Facility_T = '')
+ERROR - 2024-11-18 12:06:58 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Code_Prov_T'. - Invalid query: SELECT "Code_Prov_T", "Code_Dist_T", "Name_Dist_E", "Name_Dist_K"
+FROM "tblDistrict"
+ERROR - 2024-11-18 14:35:49 --> Severity: error --> Exception: Call to undefined method CI_DB_sqlsrv_result::join() D:\MIS\MIS\application\controllers\api6\Update.php 23
+ERROR - 2024-11-18 14:36:14 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Ambiguous column name 'Code_Dist_T'. - Invalid query: SELECT "Code_Dist_T", "Name_Dist_E", "Name_Dist_K"
+FROM "tblDistrict"
+JOIN "tblCensusVillage" ON "tblCensusVillage"."Code_Dist_T" = "tblDistrict"."Code_Dist_T"
+ERROR - 2024-11-18 16:29:49 --> Severity: Core Warning --> PHP Startup: Unable to load dynamic library 'php_mysql.dll' (tried: C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_mysql.dll (The specified module could not be found.), C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_php_mysql.dll.dll (The specified module could not be found.)) Unknown 0
+ERROR - 2024-11-18 16:31:21 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Only one expression can be specified in the select list when the subquery is not introduced with EXISTS. - Invalid query: select a.Code_Vill_T, isnull(nullif(Name_Vill_K,''),Name_Vill_E) as Name_Vill_K, isnull(Distance, 0) as Distance,
+                isnull(Pop, 0) as Pop, isnull(MobilePop, 0) as MobilePop, isnull(HHold, 0) as HHold,
+                isnull(AgeU4,0) as AgeU4, isnull(Age5_14,0) as Age5_14, isnull(Age15_49,0) as Age15_49, isnull(AgeOver49,0) as AgeOver49,  isnull(Male,0) as Male, isnull(Female,0) as Female, Lat, Long, Lat_Old, Long_Old
+                ,(select Lat as Lat_HC, Long as Long_HC from tblHFCodes where Code_Facility_T = '130148')
+                from
+                (
+	                SELECT Code_Vill_T, Name_Vill_E, Name_Vill_K, DistanceFromHC as Distance, Lat, Long, Lat_Census as Lat_Old, Long_Census as Long_Old
+	                FROM tblCensusVillage
+	                WHERE HCCode = '130148'
+                ) as a
+                LEFT JOIN (
+	                select Code_Vill_T, Pop, MobilePop, HHold, AgeU4, Age5_14,Age15_49, AgeOver49,Male, Female From
+	                tblPopByVillages
+	                WHERE Year = 2023
+                ) as b on a.Code_Vill_T = b.Code_Vill_T
+ERROR - 2024-11-18 16:33:59 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near ')'. - Invalid query: select a.Code_Vill_T, isnull(nullif(Name_Vill_K,''),Name_Vill_E) as Name_Vill_K, isnull(Distance, 0) as Distance,
+                isnull(Pop, 0) as Pop, isnull(MobilePop, 0) as MobilePop, isnull(HHold, 0) as HHold,
+                isnull(AgeU4,0) as AgeU4, isnull(Age5_14,0) as Age5_14, isnull(Age15_49,0) as Age15_49, isnull(AgeOver49,0) as AgeOver49,  isnull(Male,0) as Male, isnull(Female,0) as Female, Lat, Long, Lat_Old, Long_Old
+                ,()
+                from
+                (
+	                SELECT HCCode, Code_Vill_T, Name_Vill_E, Name_Vill_K, DistanceFromHC as Distance, Lat, Long, Lat_Census as Lat_Old, Long_Census as Long_Old
+	                FROM tblCensusVillage
+	                WHERE HCCode = '130148'
+                ) as a
+                LEFT JOIN (
+	                select Code_Vill_T, Pop, MobilePop, HHold, AgeU4, Age5_14,Age15_49, AgeOver49,Male, Female From
+	                tblPopByVillages
+	                WHERE Year = 2023
+                ) as b on a.Code_Vill_T = b.Code_Vill_T
+                join (
+                    select Lat as Lat_HC, Long as Long_HC from tblHFCodes where Code_Facility_T = '130148'
+                ) as c on c.Code_Facility_T = a.HCCode
+ERROR - 2024-11-18 16:34:16 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Code_Facility_T'. - Invalid query: select a.Code_Vill_T, isnull(nullif(Name_Vill_K,''),Name_Vill_E) as Name_Vill_K, isnull(Distance, 0) as Distance,
+                isnull(Pop, 0) as Pop, isnull(MobilePop, 0) as MobilePop, isnull(HHold, 0) as HHold,
+                isnull(AgeU4,0) as AgeU4, isnull(Age5_14,0) as Age5_14, isnull(Age15_49,0) as Age15_49, isnull(AgeOver49,0) as AgeOver49,  isnull(Male,0) as Male, isnull(Female,0) as Female, Lat, Long, Lat_Old, Long_Old
+                ,Lat_HC, Long_HC
+                from
+                (
+	                SELECT HCCode, Code_Vill_T, Name_Vill_E, Name_Vill_K, DistanceFromHC as Distance, Lat, Long, Lat_Census as Lat_Old, Long_Census as Long_Old
+	                FROM tblCensusVillage
+	                WHERE HCCode = '130148'
+                ) as a
+                LEFT JOIN (
+	                select Code_Vill_T, Pop, MobilePop, HHold, AgeU4, Age5_14,Age15_49, AgeOver49,Male, Female From
+	                tblPopByVillages
+	                WHERE Year = 2023
+                ) as b on a.Code_Vill_T = b.Code_Vill_T
+                join (
+                    select Lat as Lat_HC, Long as Long_HC from tblHFCodes where Code_Facility_T = '130148'
+                ) as c on c.Code_Facility_T = a.HCCode

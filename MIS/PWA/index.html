@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>MIS Place</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<link href="manifest.json" rel="manifest" />
+	<link href="favicon.ico" rel="icon" type="image/x-icon">
+
+	<link href="/media/CSS/bootstrap.css" rel="stylesheet" />
+	<link href="style.css" rel="stylesheet" />
+
+	<script src="/media/JavaScript/jquery-3.3.1.min.js"></script>
+	<script src="/media/JavaScript/knockout-3.4.0.js"></script>
+	<script src="pwa.js"></script>
+</head>
+<body data-bind="visible: true" style="display:none">
+	<div class="progress" data-bind="hidden: loaded">
+		<div class="progress-bar progress-bar-striped active">
+			<b style="font-size:20px; line-height:40px">Loading</b>
+		</div>
+	</div>
+
+	<div class="main" data-bind="visible: loaded() && !logged()">
+		<form data-bind="submit: login">
+			<div class="form-group">
+				<input type="text" class="form-control input-lg" placeholder="Username" data-bind="value: usr" required />
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control input-lg" placeholder="Password" data-bind="value: pwd" required />
+			</div>
+			<div class="form-group text-center" data-bind="visible: incorrect">
+				<span class="text-danger h4">Username or password is incorrect.</span>
+			</div>
+			<div class="text-center">
+				<button class="btn btn-primary btn-lg btn-block" data-bind="hidden: logging">Login</button>
+				<img src="/media/images/ajax-loader.gif" height="28" data-bind="visible: logging" />
+			</div>
+		</form>
+	</div>
+
+	<div class="main" data-bind="visible: loaded() && logged()">
+		<div>
+			<div class="input-group input-group-lg form-group">
+				<span class="input-group-addon">
+					<span>Province</span>
+				</span>
+				<select class="form-control" data-bind="value: pv, options: pvList, optionsValue: 'code', optionsText: 'name', optionsCaption: ''"></select>
+			</div>
+
+			<div class="input-group input-group-lg form-group">
+				<span class="input-group-addon">
+					<span>OD</span>
+				</span>
+				<select class="form-control" data-bind="value: od, options: odList, optionsValue: 'code', optionsText: 'name', optionsCaption: ''"></select>
+			</div>
+
+			<div class="input-group input-group-lg form-group">
+				<span class="input-group-addon">
+					<span>HF</span>
+				</span>
+				<select class="form-control" data-bind="value: hc, options: hcList, optionsValue: 'code', optionsText: 'name', optionsCaption: ''"></select>
+			</div>
+
+			<div class="input-group input-group-lg form-group">
+				<span class="input-group-addon">
+					<span>Village</span>
+				</span>
+				<select class="form-control" data-bind="value: vl, options: vlList, optionsValue: 'code', optionsText: 'name', optionsCaption: ''"></select>
+			</div>
+
+			<button class="btn btn-success btn-lg btn-block" data-bind="click: showDetail">Detail</button>
+		</div>
+		<div style="margin-bottom:20px">
+			<button class="btn btn-primary btn-lg btn-block" data-bind="click: showDownload, visible: newUpdate">Download New Update</button>
+		</div>
+	</div>
+
+	<div class="detail" data-bind="css: { active: view() == 'detail' }">
+		<div class="form-group">
+			<button class="btn btn-info btn-lg btn-block" data-bind="click: back">Back</button>
+		</div>
+
+		<div data-bind="with: detail">
+			<div class="panel panel-default form-group" style="font-size:18px">
+				<div class="panel-heading">
+					<b>HF</b>
+				</div>
+				<div class="panel-body" data-bind="with: hc">
+					<div class="form-group">
+						<b>Name:</b>
+						<span data-bind="text: name"></span>
+					</div>
+					<div class="form-group">
+						<b>Code:</b>
+						<a data-bind="text: code, click: $root.copyCode"></a>
+					</div>
+					<div class="form-group" data-bind="visible: lat != null && lat > 0">
+						<b>Map:</b>
+						<a data-bind="attr: { href: 'https://maps.google.com/?q=' + lat + ',' + long }">Open Google Map</a>
+					</div>
+					<div class="form-group">
+						<b style="display:inline-block; width:107px">Case Entry:</b>
+						<!-- ko with: $root.hcCase -->
+						<input type="checkbox" class="checkbox-inline" data-bind="checked: ExpireEntry, visible: ExpireEntry != null, click: $root.checkboxClick" />
+						<span data-bind="visible: ExpireEntry == null">No Device</span>
+						<!-- /ko -->
+						<img src="/media/images/ajax-loader.gif" height="28" data-bind="hidden: $root.hcCase" />
+					</div>
+					<div>
+						<b style="display:inline-block; width:107px">Stock Entry:</b>
+						<!-- ko with: $root.hcStock -->
+						<input type="checkbox" class="checkbox-inline" data-bind="checked: ExpireStock, visible: ExpireStock != null, click: $root.checkboxClick" />
+						<span data-bind="visible: ExpireStock == null">No Device</span>
+						<!-- /ko -->
+						<img src="/media/images/ajax-loader.gif" height="28" data-bind="hidden: $root.hcStock" />
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-default form-group" data-bind="visible: vl != null" style="font-size:18px">
+				<div class="panel-heading">
+					<b>Village</b>
+				</div>
+				<div class="panel-body" data-bind="with: vl">
+					<div class="form-group">
+						<b>Name:</b>
+						<span data-bind="text: name"></span>
+					</div>
+					<div class="form-group">
+						<b>Code:</b>
+						<a data-bind="text: code, click: $root.copyCode"></a>
+					</div>
+					<div class="form-group" data-bind="visible: lat != null && lat > 0">
+						<b>Map:</b>
+						<a data-bind="attr: { href: 'https://maps.google.com/?q=' + lat + ',' + long }">Open Google Map</a>
+					</div>
+					<div>
+						<b style="display:inline-block; width:107px">Case Entry:</b>
+						<!-- ko with: $root.vlCase -->
+						<input type="checkbox" class="checkbox-inline" data-bind="checked: ExpireEntry, visible: ExpireEntry != null, click: $root.checkboxClick" />
+						<span data-bind="visible: ExpireEntry == null">No Device</span>
+						<!-- /ko -->
+						<img src="/media/images/ajax-loader.gif" height="28" data-bind="hidden: $root.vlCase" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="notify"></div>
+</body>
+</html>

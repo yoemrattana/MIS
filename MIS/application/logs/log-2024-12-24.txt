@@ -1,0 +1,57 @@
+ERROR - 2024-12-24 08:54:10 --> Severity: Core Warning --> PHP Startup: Unable to load dynamic library 'php_mysql.dll' (tried: C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_mysql.dll (The specified module could not be found.), C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_php_mysql.dll.dll (The specified module could not be found.)) Unknown 0
+ERROR - 2024-12-24 09:05:04 --> Severity: Notice --> Undefined index: Day D:\MIS\MIS\application\models\VMWFollowup_model.php 80
+ERROR - 2024-12-24 09:07:03 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'DAY'. - Invalid query: with t as
+				(
+					select Rec_ID, CONCAT('VMW_', Rec_ID) as CodeCase, NameK, Sex, Age, PatientCode, Diagnosis, PatientPhone, ID as Code_Vill_T, G6PDHb,G6PDdL, DateCase, PrimaquineDate
+					from tblVMWActivityCases
+					where Diagnosis in ('V', 'M', 'O') and (Primaquine15 > 0 or Primaquine75 > 0)
+
+					union all
+
+					select Rec_ID, CONCAT('HC_', Rec_ID) as CodeCase, NameK, Sex, Age, PatientCode, Diagnosis, PatientPhone,  a.Code_Vill_T, G6PDHb,G6PDdL, DateCase, PrimaquineDate
+					from tblHFActivityCases as a
+					join tblCensusvillage as b on a.Code_Vill_t = b.Code_Vill_T
+					where Diagnosis in ('V', 'M', 'O') and (Primaquine15 > 0 or Primaquine75 > 0) and HaveVMW = 1
+				)
+
+				select a.Rec_ID, Token, NameK, Sex, Age, a.PatientCode, Diagnosis, PatientPhone,
+						Name_Vill_K, Name_Facility_K, Name_OD_K, Name_Prov_K ,
+						DATEADD(DAY, 3, PrimaquineDate) as DayDate, DAY-3 as Day
+				,iif( (Sex='M' and G6PDdL >= 4.1 and G6PDHb >=7.1) or (Sex='F' and G6PDdL >= 6.1 and G6PDHb >=7.1),1,0) as IsG6PDNormal
+				from t as a
+				join tblToken as c on c.CodePlace = a.Code_Vill_T
+				join tblCensusVillage as d on d.Code_Vill_T = a.Code_Vill_t collate SQL_Latin1_General_CP1_CI_AS
+				join tblHFCodes as e on e.Code_Facility_T = d.HCCode
+				join tblProvince as f on f.Code_Prov_T = e.Code_Prov_N
+				where DATEDIFF(day, getdate(), DATEADD(DAY, 3, PrimaquineDate)) < 1
+ERROR - 2024-12-24 13:51:54 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near the keyword 'where'. - Invalid query: WITH T as (
+	                select PatientCode, NameK,Age, Sex, Diagnosis, Weight, Month, Year, DateCase, ID as Code_Facility_T, Rec_ID, 'HC' as Type, '' as Class
+	                from tblHFActivityCases
+	                where year = '2024' and Positive = 'P'
+
+                    union all
+                    select PatientCode, NameK,Age, Sex, Diagnosis, Weight, Month, Year, DateCase, HCCode as Code_Facility_T, Rec_ID, 'VMW' as Type,
+                    case when Recrudescence = 1 or Relapse = 1 then 'Recrudescense/Relapse'
+	                    when LocallyAcquired = 1 then 'Locally Acquired'
+	                    when DomesticallyImported = 1 then 'Domestically Imported'
+	                    when InternationalImported = 1 then 'International Imported'
+	                    end  Class
+	                    from tblVMWActivityCases as a
+	                    join tblCensusVillage as b on a.ID = b.Code_Vill_T
+                    where year = '2024' and Positive = 'P'
+                )
+
+                select a.*, Code_OD_T, Code_Prov_N, c.Rec_ID as CI_ID, iif(a.Type = 'HC', c.Classify, a.Class) as Classify
+                from T as a
+                join tblHFCodes as b on a.Code_Facility_T = b.Code_Facility_T
+                left join tblCI_HF as c on a.Rec_ID = c.Case_ID and c.Case_Type = a.Type
+                left join
+                (
+                    select a.*, Code_Prov_T as Prov_Code from tblMRRTCaseTransfer as  a
+                    join tblOD as b on a.ToOD = b.Code_OD_T
+                ) as d
+                where (Code_Prov_N = '' or '' = '')
+                and (Code_OD_T = '' or '' = '')
+                and (a.Code_Facility_T = '' or '' = '')
+                and IsTarget = 1
+                order by Month desc

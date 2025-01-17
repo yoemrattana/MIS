@@ -1,0 +1,11 @@
+ERROR - 2024-08-28 10:21:13 --> Severity: Core Warning --> PHP Startup: Unable to load dynamic library 'php_mysql.dll' (tried: C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_mysql.dll (The specified module could not be found.), C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_php_mysql.dll.dll (The specified module could not be found.)) Unknown 0
+ERROR - 2024-08-28 10:25:08 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Year'. - Invalid query: select Code_Prov_T, c.Code_OD_T, c.Code_Facility_T, a.*
+                from tblMRRT_TDA as a
+                join tblCensusVillage as b on a.Code_Vill_T = b.Code_Vill_T
+                join tblHFCodes as c on b.HCCode = c.Code_Facility_T
+                order by a.Year, a.Month
+ERROR - 2024-08-28 10:25:18 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Year'. - Invalid query: select Code_Prov_T, c.Code_OD_T, c.Code_Facility_T, a.*
+                from tblMRRT_TDA as a
+                join tblCensusVillage as b on a.Code_Vill_T = b.Code_Vill_T
+                join tblHFCodes as c on b.HCCode = c.Code_Facility_T
+                order by a.Year, a.Month

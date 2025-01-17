@@ -1,0 +1,11 @@
+ERROR - 2024-12-07 20:00:58 --> Severity: Core Warning --> PHP Startup: Unable to load dynamic library 'php_mysql.dll' (tried: C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_mysql.dll (The specified module could not be found.), C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_php_mysql.dll.dll (The specified module could not be found.)) Unknown 0
+ERROR - 2024-12-07 20:39:48 --> Severity: Notice --> Undefined index: Logo D:\MIS\MIS\application\controllers\Event.php 25
+ERROR - 2024-12-07 20:40:33 --> Severity: Notice --> Undefined index: Logo D:\MIS\MIS\application\controllers\Event.php 25
+ERROR - 2024-12-07 20:42:51 --> Severity: 4096 --> Object of class Event could not be converted to string D:\MIS\MIS\application\controllers\Event.php 30
+ERROR - 2024-12-07 20:44:06 --> Severity: 4096 --> Object of class Event could not be converted to string D:\MIS\MIS\application\controllers\Event.php 30
+ERROR - 2024-12-07 20:45:33 --> Severity: Notice --> Undefined offset: 1 D:\MIS\MIS\application\controllers\Event.php 39
+ERROR - 2024-12-07 21:16:41 --> Severity: Warning --> unlink(media/Event/): Is a directory D:\MIS\MIS\application\controllers\Event.php 26
+ERROR - 2024-12-07 21:25:21 --> Severity: Warning --> unlink(media/Event/): Is a directory D:\MIS\MIS\application\controllers\Event.php 26
+ERROR - 2024-12-07 22:16:00 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot update identity column 'Rec_ID'. - Invalid query: UPDATE "tblEvent" SET "Rec_ID" = N'1', "EventNameKH" = N'ថថដ', "EventNameEN" = N'sfsd', "DateFrom" = N'', "DateTo" = N'', "OrganizationKH" = N'', "OrganizationEN" = N'', "VenueKH" = N'', "VenueEN" = N'', "AgendaKH" = NULL, "AgendaEN" = NULL, "Backdrop" = NULL, "Logo" = NULL, "VenueMap" = N'', "UnitNameKH" = N'', "UnitNameEN" = N'', "InitTime" = N'2024-12-07 22:16:00.879', "InitUser" = N'RattanaMIS', "ModiTime" = N'', "ModiUser" = N''
+WHERE "Rec_ID" = N'1'
+ERROR - 2024-12-07 22:16:43 --> Severity: Notice --> Undefined index: Rec_ID D:\MIS\MIS\application\controllers\Event.php 54

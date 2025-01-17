@@ -1,0 +1,70 @@
+ERROR - 2025-01-15 09:42:39 --> Severity: Core Warning --> PHP Startup: Unable to load dynamic library 'php_mysql.dll' (tried: C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_mysql.dll (The specified module could not be found.), C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_php_mysql.dll.dll (The specified module could not be found.)) Unknown 0
+ERROR - 2025-01-15 11:44:35 --> Severity: Notice --> Undefined index: Status D:\MIS\MIS\application\controllers\Patient.php 63
+ERROR - 2025-01-15 14:06:29 --> Severity: Core Warning --> PHP Startup: Unable to load dynamic library 'php_mysql.dll' (tried: C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_mysql.dll (The specified module could not be found.), C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_php_mysql.dll.dll (The specified module could not be found.)) Unknown 0
+ERROR - 2025-01-15 16:31:08 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Code_Vill_t'. - Invalid query: with cases as (
+					select ID as Code_Facility_T, a.Code_Vill_t as Code_Vill_T, PatientCode,
+					NameK, DateCase, Diagnosis, PatientPhone, Year, Month, concat('HC_',a.Rec_ID) as Case_ID, PrimaquineDate
+					from tblHFActivityCases as a
+					join tblCensusVillage as b on a.Code_Vill_t = b.Code_Vill_T and HaveVMW = 0
+					where Diagnosis in ('V', 'M', 'O') and Year = '2025' and (Primaquine15 > 0 or Primaquine75 > 0)
+
+					union all
+
+					select ID as Code_Facility_T, Code_Vill_t as Code_Vill_T, PatientCode,
+					NameK, DateCase, Diagnosis, PatientPhone, Year, Month, concat('HC_',a.Rec_ID) as Case_ID, PrimaquineDate
+					from tblVMWActivityCases as a
+					where Diagnosis in ('V', 'M', 'O') and Year = '2025' and (Primaquine15 > 0 or Primaquine75 > 0)
+					
+				)
+
+				select * from
+				(
+					select a.*, IsReminder, Code_OD_T, b.Code_Prov_N, Day,
+					DATEADD(DAY, 3, PrimaquineDate) as Day3Date, DATEADD(DAY, 7, PrimaquineDate) as Day7Date,
+					DATEADD(WEEK, 2, PrimaquineDate) as W2Date, DATEADD(WEEK, 3, PrimaquineDate) as W3Date,
+					DATEADD(WEEK, 4, PrimaquineDate) as W4Date, DATEADD(WEEK, 5, PrimaquineDate) as W5Date,
+					DATEADD(WEEK, 6, PrimaquineDate) as W6Date, DATEADD(WEEK, 7, PrimaquineDate) as W7Date,
+					DATEADD(WEEK, 8, PrimaquineDate) as W8Date
+					from cases as a
+					join tblHFCodes as b on a.Code_Facility_T = b.Code_Facility_T
+					left join tblHFFollowup as c on CAST(a.Case_ID as varchar) = CAST(c.Case_ID as varchar)
+					join tblCensusVillage as d on a.Code_Vill_T = b.Code_Vill_T
+				) as sub
+				pivot (
+					count(Day) for day in ([Day3], [D3], [D7], [Day7], [Day14], [W2], [W3], [W4], [W5], [W6], [W7],[W8])
+				) as p
+				 where Code_Prov_N = '19' order by DateCase
+ERROR - 2025-01-15 16:32:40 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'HCCode'. - Invalid query: with cases as (
+					select ID as Code_Facility_T, a.Code_Vill_t as Code_Vill_T, PatientCode,
+					NameK, DateCase, Diagnosis, PatientPhone, Year, Month, concat('HC_',a.Rec_ID) as Case_ID, PrimaquineDate
+					from tblHFActivityCases as a
+					join tblCensusVillage as b on a.Code_Vill_t = b.Code_Vill_T and HaveVMW = 0
+					where Diagnosis in ('V', 'M', 'O') and Year = '2025' and (Primaquine15 > 0 or Primaquine75 > 0)
+
+					union all
+
+					select HCCode as Code_Facility_T, ID as Code_Vill_T, PatientCode,
+					NameK, DateCase, Diagnosis, PatientPhone, Year, Month, concat('HC_',a.Rec_ID) as Case_ID, PrimaquineDate
+					from tblVMWActivityCases as a
+					join tblHFCodes as b on a.HCCode = b.Code_Facility_T
+					where Diagnosis in ('V', 'M', 'O') and Year = '2025' and (Primaquine15 > 0 or Primaquine75 > 0)
+					
+				)
+
+				select * from
+				(
+					select a.*, IsReminder, Code_OD_T, b.Code_Prov_N, Day,
+					DATEADD(DAY, 3, PrimaquineDate) as Day3Date, DATEADD(DAY, 7, PrimaquineDate) as Day7Date,
+					DATEADD(WEEK, 2, PrimaquineDate) as W2Date, DATEADD(WEEK, 3, PrimaquineDate) as W3Date,
+					DATEADD(WEEK, 4, PrimaquineDate) as W4Date, DATEADD(WEEK, 5, PrimaquineDate) as W5Date,
+					DATEADD(WEEK, 6, PrimaquineDate) as W6Date, DATEADD(WEEK, 7, PrimaquineDate) as W7Date,
+					DATEADD(WEEK, 8, PrimaquineDate) as W8Date
+					from cases as a
+					join tblHFCodes as b on a.Code_Facility_T = b.Code_Facility_T
+					left join tblHFFollowup as c on CAST(a.Case_ID as varchar) = CAST(c.Case_ID as varchar)
+					join tblCensusVillage as d on a.Code_Vill_T = b.Code_Vill_T
+				) as sub
+				pivot (
+					count(Day) for day in ([Day3], [D3], [D7], [Day7], [Day14], [W2], [W3], [W4], [W5], [W6], [W7],[W8])
+				) as p
+				 where Code_Prov_N = '19' order by DateCase

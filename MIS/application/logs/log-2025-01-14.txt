@@ -1,0 +1,22 @@
+ERROR - 2025-01-14 14:35:22 --> Severity: Core Warning --> PHP Startup: Unable to load dynamic library 'php_mysql.dll' (tried: C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_mysql.dll (The specified module could not be found.), C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_php_mysql.dll.dll (The specified module could not be found.)) Unknown 0
+ERROR - 2025-01-14 15:24:28 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The function 'row_number' must have an OVER clause with ORDER BY. - Invalid query: with t as (
+                    select Rec_ID, PatientCode, NameK, PatientPhone, Age, Sex, Code_Vill_t, DateCase, Year, Month, 'tblHFActivityCases' as tbl, 'HC' as CaseType
+                    from tblHFActivityCases where Positive = 'P' and Year > 2021
+                    union all
+                    select Rec_ID, PatientCode,  NameK, PatientPhone, Age, Sex, ID, DateCase, Year, Month, 'tblVMWActivityCases' as tbl, 'VMW' as CaseType
+                    from tblVMWActivityCases where Positive = 'P' and Year > 2021
+                )
+
+                select a.*, e.Code_Prov_T, Code_OD_T, Code_Facility_T, iif(f.Status is null, '', Status) as Status
+                ,row_number() over ( partition by a.PatientCode) as n
+                from t as a
+                join tblCensusVillage as c on c.Code_Vill_T = a.Code_Vill_t
+                join tblHFCodes as d on c.HCCode = d.Code_Facility_T
+                join tblProvince as e on d.Code_Prov_N = e.Code_Prov_T
+                left join (
+                    select Distinct PatientCode, Status from tblPatientCodeStatus
+                )
+                as f on a.PatientCode = f.PatientCode
+                where d.IsTarget =1
+                order by DateCase desc, Year desc, Month desc
+ERROR - 2025-01-14 15:29:50 --> Severity: Warning --> Use of undefined constant Transaction - assumed 'Transaction' (this will throw an Error in a future version of PHP) xdebug://debug-eval(1) : eval()'d code 1

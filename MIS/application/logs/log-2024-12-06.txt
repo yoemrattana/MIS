@@ -1,0 +1,41 @@
+ERROR - 2024-12-06 08:44:27 --> Severity: Core Warning --> PHP Startup: Unable to load dynamic library 'php_mysql.dll' (tried: C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_mysql.dll (The specified module could not be found.), C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_php_mysql.dll.dll (The specified module could not be found.)) Unknown 0
+ERROR - 2024-12-06 09:58:47 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near '='. - Invalid query: with t as (
+					select a.* , ROW_NUMBER() over (Partition by Code_Place Order by a.InitTime DESC) as RowNum
+					from tblQuizTake as a
+					join tblCensusVillage as b on a.Code_Place = b.Code_Vill_T
+					join tblHFCodes as c on b.HCCode = c.Code_Facility_T
+					where ( = '' or  = '')
+					and ( = '' or  = '')
+					and ( = '' or  = '')
+				)
+
+				select sum(iif(TotalScore >=90 , 1,0)) as Pass
+				,sum(iif (TotalScore <90 ,1,0)) as Failed, sum(1) as Total
+				from t  where RowNum = 1
+ERROR - 2024-12-06 10:00:00 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near '='. - Invalid query: with t as (
+					select a.* , ROW_NUMBER() over (Partition by Code_Place Order by a.InitTime DESC) as RowNum
+					from tblQuizTake as a
+					join tblCensusVillage as b on a.Code_Place = b.Code_Vill_T
+					join tblHFCodes as c on b.HCCode = c.Code_Facility_T
+					where ( = '' or  = '')
+					and ( = '' or  = '')
+					and ( = '' or  = '')
+				)
+
+				select sum(iif(TotalScore >=90 , 1,0)) as Pass
+				,sum(iif (TotalScore <90 ,1,0)) as Failed, sum(1) as Total
+				from t  where RowNum = 1
+ERROR - 2024-12-06 10:00:08 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near '='. - Invalid query: with t as (
+					select a.* , ROW_NUMBER() over (Partition by Code_Place Order by a.InitTime DESC) as RowNum
+					from tblQuizTake as a
+					join tblCensusVillage as b on a.Code_Place = b.Code_Vill_T
+					join tblHFCodes as c on b.HCCode = c.Code_Facility_T
+					where ( = '' or  = '')
+					and ( = '' or  = '')
+					and ( = '' or  = '')
+				)
+
+				select sum(iif(TotalScore >=90 , 1,0)) as Pass
+				,sum(iif (TotalScore <90 ,1,0)) as Failed, sum(1) as Total
+				from t  where RowNum = 1
+ERROR - 2024-12-06 21:28:40 --> Severity: Core Warning --> PHP Startup: Unable to load dynamic library 'php_mysql.dll' (tried: C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_mysql.dll (The specified module could not be found.), C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_php_mysql.dll.dll (The specified module could not be found.)) Unknown 0

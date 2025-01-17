@@ -1,0 +1,14 @@
+ERROR - 2024-11-30 15:26:49 --> Severity: Core Warning --> PHP Startup: Unable to load dynamic library 'php_mysql.dll' (tried: C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_mysql.dll (The specified module could not be found.), C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_php_mysql.dll.dll (The specified module could not be found.)) Unknown 0
+ERROR - 2024-11-30 15:52:11 --> Severity: Warning --> filemtime(): stat failed for D:\MIS\MIS/media/ViewModel/Inviation.js D:\MIS\MIS\application\helpers\global_function_helper.php 5
+ERROR - 2024-11-30 15:52:56 --> Severity: Warning --> filemtime(): stat failed for D:\MIS\MIS/media/ViewModel/Inviation.js D:\MIS\MIS\application\helpers\global_function_helper.php 5
+ERROR - 2024-11-30 15:55:11 --> Severity: Warning --> filemtime(): stat failed for D:\MIS\MIS/media/ViewModel/Inviation.js D:\MIS\MIS\application\helpers\global_function_helper.php 5
+ERROR - 2024-11-30 15:57:15 --> Severity: Warning --> filemtime(): stat failed for D:\MIS\MIS/media/ViewModel/Inviation.js D:\MIS\MIS\application\helpers\global_function_helper.php 5
+ERROR - 2024-11-30 15:57:31 --> Severity: Warning --> filemtime(): stat failed for D:\MIS\MIS/media/ViewModel/Inviation.js D:\MIS\MIS\application\helpers\global_function_helper.php 5
+ERROR - 2024-11-30 15:57:43 --> Severity: Warning --> filemtime(): stat failed for D:\MIS\MIS/media/ViewModel/Inviation.js D:\MIS\MIS\application\helpers\global_function_helper.php 5
+ERROR - 2024-11-30 15:58:02 --> Severity: Warning --> filemtime(): stat failed for D:\MIS\MIS/media/ViewModel/Inviation.js D:\MIS\MIS\application\helpers\global_function_helper.php 5
+ERROR - 2024-11-30 15:58:11 --> Severity: Warning --> filemtime(): stat failed for D:\MIS\MIS/media/ViewModel/Inviation.js D:\MIS\MIS\application\helpers\global_function_helper.php 5
+ERROR - 2024-11-30 15:58:17 --> Severity: Warning --> filemtime(): stat failed for D:\MIS\MIS/media/ViewModel/Inviation.js D:\MIS\MIS\application\helpers\global_function_helper.php 5
+ERROR - 2024-11-30 16:00:08 --> Severity: Warning --> filemtime(): stat failed for D:\MIS\MIS/media/ViewModel/Inviation.js D:\MIS\MIS\application\helpers\global_function_helper.php 5
+ERROR - 2024-11-30 16:00:22 --> Severity: Warning --> filemtime(): stat failed for D:\MIS\MIS/media/ViewModel/Inviation.js D:\MIS\MIS\application\helpers\global_function_helper.php 5
+ERROR - 2024-11-30 16:00:23 --> Severity: Warning --> filemtime(): stat failed for D:\MIS\MIS/media/ViewModel/Inviation.js D:\MIS\MIS\application\helpers\global_function_helper.php 5
+ERROR - 2024-11-30 16:01:21 --> Severity: Warning --> filemtime(): stat failed for D:\MIS\MIS/media/ViewModel/Inviation.js D:\MIS\MIS\application\helpers\global_function_helper.php 5

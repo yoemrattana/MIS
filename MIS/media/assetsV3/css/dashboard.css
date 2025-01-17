@@ -1,0 +1,586 @@
+﻿* {
+    box-sizing: border-box
+}
+
+body {
+    background-color: #cccc;
+    overflow-x: unset;
+    font-family: 'Calibri';
+    max-width: 2500px;
+    margin: 0 auto;
+}
+
+.title {
+    position: absolute;
+    left: 50%;
+    transform: translate(-95%, 108%);
+    color: #fff;
+    font-family: 'Calibri';
+}
+
+.title-logo {
+    width: 120px;
+    position: absolute;
+    right: 218px;
+    transform: translate(-30%, 25%);
+}
+
+form label,
+table th {
+    font-weight: 900 !important;
+}
+
+.custom-select {
+    font-weight: 900 !important;
+    border: 1px solid black !important;
+}
+
+.form-control[disabled],
+fieldset[disabled] .form-control {
+    cursor: not-allowed;
+}
+
+.btn.disabled,
+.btn[disabled],
+fieldset[disabled] .btn {
+    cursor: not-allowed;
+    opacity: 0.65;
+    filter: alpha(opacity=65);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.filter {
+    width: 45%
+}
+
+.border {
+    border: 2px solid #01c0c8 !important;
+    border-radius: 13px;
+}
+
+.margin-top-5 {
+    margin-top: 10px
+}
+
+.padding-5 {
+    padding: 5px
+}
+
+.radius-right {
+    border-radius: unset;
+    border-top-right-radius: 20px;
+}
+
+.tbl-title,
+.tbl-title th {
+    font-weight: 900 !important
+}
+
+.form-control {
+    min-height: 35px
+}
+
+.custom-select {
+    font-size: 0.800rem
+}
+
+.button-group button {
+    min-width: 100px
+}
+
+.btn-tab {
+    font-weight: 800 !important;
+    font-size: 16px !important;
+}
+
+h3 {
+    font-weight: 700;
+    font-family: 'Titillium Web', sans-serif;
+    position: relative;
+    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.4);
+    font-size: 17px;
+    line-height: 40px;
+    text-transform: uppercase;
+}
+
+.box-shadow {
+    box-shadow: 0 0 19px rgba(0, 0, 0, .15), 0 9px 19px rgba(0, 0, 0, .15);
+}
+
+.bluecontainer {
+    margin-top: 25px;
+}
+
+.box {
+    width: 100%;
+    height: 412px;
+    background: #FFF;
+    margin: 40px auto;
+}
+
+.effect5 {
+    position: relative;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.effect5:before,
+.effect5:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    top: 10px;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    -moz-border-radius: 100px / 10px;
+    border-radius: 100px / 10px;
+}
+
+.effect5:after {
+    right: 10px;
+    left: auto;
+    -webkit-transform: skew(8deg) rotate(3deg);
+    -moz-transform: skew(8deg) rotate(3deg);
+    -ms-transform: skew(8deg) rotate(3deg);
+    -o-transform: skew(8deg) rotate(3deg);
+    transform: skew(8deg) rotate(3deg);
+}
+
+.chartbox {
+    margin: 0 10px 15px 10px;
+}
+
+.chart-container, .chart-container2,
+.card {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    background-color: #fff;
+    border: 2px solid #3498db !important;
+    box-shadow: 0 0 19px rgba(0, 0, 0, .15), 0 9px 19px rgba(0, 0, 0, .15);
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+.chart-container {
+    min-width: 600px !important;
+}
+
+.border-color {
+    border: 2px solid #3498db !important;
+}
+
+.chart-container .btn {
+    position: absolute;
+    top: 41px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #54bceb;
+    color: white;
+    font-size: 11.5px;
+    padding: 3px 6px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    padding-bottom: 0;
+    opacity: 0.7;
+}
+
+.chart-container .btn input[type=checkbox] {
+    margin-top: 1px;
+    margin-left: -16px;
+    vertical-align: bottom;
+    position: relative;
+    top: -3px;
+}
+
+/*.overview .highcharts-point.highcharts-color-0 {
+    stroke-opacity: 1;
+    fill-opacity: 0.9;
+    stroke-width: 1;
+}
+
+.overview .highcharts-point.highcharts-color-1 {
+    stroke-opacity: 1;
+    fill-opacity: 0.9;
+    stroke-width: 1;
+}
+
+.overview .highcharts-point.highcharts-color-2 {
+    stroke-opacity: 1;
+    fill-opacity: 0.9;
+    stroke-width: 1;
+}*/
+
+.highcharts-legend-item {
+    pointer-events: none;
+}
+
+#map3 .highcharts-legend-item,
+#map4 .highcharts-legend-item {
+    pointer-events: visible;
+}
+
+/*path.highcharts-point {
+    opacity: 0.8;
+}*/
+
+.hidden {
+    display: none
+}
+
+.table {
+    background: white;
+}
+
+    .table td,
+    .table th {
+        padding: 0.2rem;
+        vertical-align: top;
+        white-space: nowrap;
+    }
+
+    .table thead th {
+        border-bottom: none;
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    .table thead tr th {
+        font-weight: bold;
+    }
+
+    .table tbody {
+        font-weight: 500
+    }
+
+.label {
+    border-radius: 15px
+}
+
+#tbl-surveillance th {
+    text-align: center
+}
+
+.active {
+    background-color: #343a40;
+}
+
+.checkbox-inline {
+    position: relative;
+    display: inline-block;
+    padding-left: 20px;
+    margin-bottom: 0;
+    vertical-align: middle;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.card-2 {
+    position: relative;
+    display: flex;
+    min-width: 0;
+    background-color: #fff;
+    background-clip: border-box;
+    border-radius: 0;
+    width: 100%;
+    margin-bottom: 20px;
+    border: 2px solid #3498db !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .15), 0 3px 3px rgba(0, 0, 0, .15);
+}
+
+.page-aside {
+    position: relative;
+}
+
+.left-aside {
+    position: absolute;
+    border-right: 1px solid #e9ecef;
+    padding: 15px;
+    width: 250px;
+    height: 100%;
+}
+
+.right-aside {
+    padding: 20px;
+    margin-left: 250px;
+}
+
+.divider {
+    margin: 10px 0;
+    height: 1px;
+    background: #e9ecef;
+}
+
+#apimap-info .form-control {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.panel-header {
+    font-weight: 500;
+}
+
+.mg-top-10 {
+    margin-top: 10px
+}
+
+.specie input[type=checkbox] {
+    position: relative;
+    top: 2px;
+}
+
+.specie span {
+    font-size: 14px
+}
+
+.bg-deepskyblue {
+    background-color: deepskyblue
+}
+
+.info {
+    background-color: #bcdbdc !important;
+}
+
+.hidden-print {
+    visibility: hidden
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 99;
+}
+
+.bg-color {
+    background-color: #fff !important
+}
+
+/* Media query */
+/* For Desktop View */
+@media screen and (min-width: 1024px) {
+    .title {
+        font-size: 39px;
+    }
+
+    .title-logo {
+        right: 200px;
+    }
+
+    .form-group {
+        margin-bottom: 0px;
+    }
+
+    .highcharts-title {
+        font-size: 22px !important;
+    }
+}
+
+@media screen and (min-width:1010px) and (max-width:1023px) {
+}
+
+/* For Tablet View */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .title {
+        font-size: 30px;
+    }
+
+    .title-logo {
+        right: -22px;
+    }
+
+    .sticky {
+        position: relative;
+        z-index: auto;
+        top: unset;
+    }
+}
+
+/* For Mobile Portrait View */
+@media screen and (max-width: 480px) and (orientation: portrait) {
+    .title {
+        font-size: 23px;
+    }
+
+    .title-logo {
+        right: -22px;
+    }
+
+    .sticky {
+        position: relative;
+        z-index: auto;
+        top: unset;
+    }
+}
+
+/* For Mobile Landscape View */
+@media screen and (max-width: 640px) and (orientation: landscape) {
+    .title {
+        font-size: 23px;
+    }
+
+    .title-logo {
+        right: -22px;
+    }
+
+    .sticky {
+        position: relative;
+        z-index: auto;
+        top: unset;
+    }
+}
+
+/* For Mobile Phones Portrait or Landscape View */
+@media screen and (max-width: 640px) {
+    .title {
+        font-size: 23px;
+    }
+
+    .title-logo {
+        right: -22px;
+    }
+
+    .sticky {
+        position: relative;
+        z-index: auto;
+        top: unset;
+    }
+}
+
+/* For iPhone 4 Portrait or Landscape View */
+@media screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
+    .title {
+        font-size: 23px;
+    }
+
+    .title-logo {
+        right: -22px;
+    }
+
+    .sticky {
+        position: relative;
+        z-index: auto;
+        top: unset;
+    }
+}
+
+/* For iPhone 5 Portrait or Landscape View */
+@media (device-height: 568px) and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
+    .title {
+        font-size: 23px;
+    }
+
+    .title-logo {
+        right: -22px;
+    }
+
+    .sticky {
+        position: relative;
+        z-index: auto;
+        top: unset;
+    }
+}
+
+/* For iPhone 6 and 6 plus Portrait or Landscape View */
+@media (min-device-height: 667px) and (min-device-width: 375px) and (-webkit-min-device-pixel-ratio: 3) {
+    .title {
+        font-size: 23px;
+    }
+
+    .title-logo {
+        right: -22px;
+    }
+
+    .sticky {
+        position: relative;
+        z-index: auto;
+        top: unset;
+    }
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.scrolled-down {
+    transform: translateY(-100%);
+    transition: all 0.3s ease-in-out;
+}
+
+.scrolled-up {
+    transform: translateY(0);
+    transition: all 0.3s ease-in-out;
+}
+
+/* table radius */
+table.rounded-corners {
+    /* Change these properties */
+    border-radius: 10px;
+    /* Don't change these properties */
+    border-spacing: 0;
+    border-collapse: separate;
+    border: var(--border);
+    overflow: hidden;
+}
+
+table.rounded-corners th:not(:last-child),
+table.rounded-corners td:not(:last-child) {
+    border-right: var(--border);
+}
+
+table.rounded-corners > thead > tr:not(:last-child) > th,
+table.rounded-corners > thead > tr:not(:last-child) > td,
+table.rounded-corners > tbody > tr:not(:last-child) > th,
+table.rounded-corners > tbody > tr:not(:last-child) > td,
+table.rounded-corners > tfoot > tr:not(:last-child) > th,
+table.rounded-corners > tfoot > tr:not(:last-child) > td,
+table.rounded-corners > tr:not(:last-child) > td,
+table.rounded-corners > tr:not(:last-child) > th,
+table.rounded-corners > thead:not(:last-child),
+table.rounded-corners > tbody:not(:last-child),
+table.rounded-corners > tfoot:not(:last-child) {
+    border-bottom: var(--border);
+}
+
+.tbl-title {
+    font-size: 22px !important;
+}
+
+.modal {
+    overflow-y: auto;
+}
+
+.padding-r {
+    padding-right: 18px;
+}
+
+.padding-l {
+    padding-left: 18px;
+}

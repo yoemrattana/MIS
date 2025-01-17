@@ -1,0 +1,3 @@
+ERROR - 2024-12-17 09:03:22 --> Severity: Core Warning --> PHP Startup: Unable to load dynamic library 'php_mysql.dll' (tried: C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_mysql.dll (The specified module could not be found.), C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_php_mysql.dll.dll (The specified module could not be found.)) Unknown 0
+ERROR - 2024-12-17 09:31:30 --> Severity: 8192 --> Non-static method Message\Token::getHeader() should not be called statically D:\MIS\MIS\vendor\message\src\SingleMessage.php 24
+ERROR - 2024-12-17 12:04:03 --> Severity: Notice --> Undefined property: Cron::$Cron_Model D:\MIS\MIS\application\controllers\Cron.php 359

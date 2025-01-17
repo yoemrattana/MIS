@@ -1,0 +1,41 @@
+ERROR - 2025-01-02 08:43:36 --> Severity: Core Warning --> PHP Startup: Unable to load dynamic library 'php_mysql.dll' (tried: C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_mysql.dll (The specified module could not be found.), C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_php_mysql.dll.dll (The specified module could not be found.)) Unknown 0
+ERROR - 2025-01-02 14:30:34 --> Severity: Notice --> Undefined variable: eventId D:\MIS\MIS\application\views\invitation_accepted_view.php 394
+ERROR - 2025-01-02 14:30:35 --> Severity: Notice --> Undefined variable: eventId D:\MIS\MIS\application\views\invitation_accepted_view.php 394
+ERROR - 2025-01-02 14:36:36 --> Severity: Notice --> Undefined variable: eventId D:\MIS\MIS\application\views\invitation_accepted_view.php 394
+ERROR - 2025-01-02 14:41:02 --> Severity: 4096 --> Object of class stdClass could not be converted to string D:\MIS\MIS\application\views\invitation_accepted_view.php 396
+ERROR - 2025-01-02 14:41:04 --> Severity: 4096 --> Object of class stdClass could not be converted to string D:\MIS\MIS\application\views\invitation_accepted_view.php 396
+ERROR - 2025-01-02 14:42:16 --> Severity: 4096 --> Object of class stdClass could not be converted to string D:\MIS\MIS\application\views\invitation_accepted_view.php 396
+ERROR - 2025-01-02 14:42:21 --> Severity: 4096 --> Object of class stdClass could not be converted to string D:\MIS\MIS\application\views\invitation_accepted_view.php 396
+ERROR - 2025-01-02 14:42:23 --> Severity: 4096 --> Object of class stdClass could not be converted to string D:\MIS\MIS\application\views\invitation_accepted_view.php 396
+ERROR - 2025-01-02 14:42:35 --> Severity: Notice --> Undefined variable: event D:\MIS\MIS\application\views\invitation2_view.php 782
+ERROR - 2025-01-02 14:42:37 --> Severity: Notice --> Undefined variable: event D:\MIS\MIS\application\views\invitation2_view.php 782
+ERROR - 2025-01-02 14:42:42 --> Severity: Notice --> Undefined variable: event D:\MIS\MIS\application\views\invitation2_view.php 782
+ERROR - 2025-01-02 14:42:57 --> Severity: Notice --> Undefined variable: event D:\MIS\MIS\application\views\invitation2_view.php 782
+ERROR - 2025-01-02 14:43:06 --> Severity: Notice --> Undefined variable: event D:\MIS\MIS\application\views\invitation2_view.php 782
+ERROR - 2025-01-02 14:44:00 --> Severity: 4096 --> Object of class stdClass could not be converted to string D:\MIS\MIS\application\views\invitation_accepted_view.php 397
+ERROR - 2025-01-02 14:44:02 --> Severity: 4096 --> Object of class stdClass could not be converted to string D:\MIS\MIS\application\views\invitation_accepted_view.php 397
+ERROR - 2025-01-02 14:45:17 --> Severity: 4096 --> Object of class stdClass could not be converted to string D:\MIS\MIS\application\views\invitation_accepted_view.php 397
+ERROR - 2025-01-02 14:45:20 --> Severity: 4096 --> Object of class stdClass could not be converted to string D:\MIS\MIS\application\views\invitation_accepted_view.php 397
+ERROR - 2025-01-02 14:45:49 --> Severity: 4096 --> Object of class stdClass could not be converted to string D:\MIS\MIS\application\views\invitation_accepted_view.php 397
+ERROR - 2025-01-02 14:45:51 --> Severity: 4096 --> Object of class stdClass could not be converted to string D:\MIS\MIS\application\views\invitation_accepted_view.php 397
+ERROR - 2025-01-02 14:49:15 --> Severity: 4096 --> Object of class stdClass could not be converted to string D:\MIS\MIS\application\views\invitation_accepted_view.php 397
+ERROR - 2025-01-02 14:49:19 --> Severity: 4096 --> Object of class stdClass could not be converted to string D:\MIS\MIS\application\views\invitation_accepted_view.php 397
+ERROR - 2025-01-02 14:55:48 --> Severity: 4096 --> Object of class stdClass could not be converted to string D:\MIS\MIS\application\views\invitation_accepted_view.php 397
+ERROR - 2025-01-02 14:56:44 --> Severity: 4096 --> Object of class stdClass could not be converted to string D:\MIS\MIS\application\views\invitation_accepted_view.php 393
+ERROR - 2025-01-02 14:56:56 --> Severity: 4096 --> Object of class stdClass could not be converted to string D:\MIS\MIS\application\views\invitation_accepted_view.php 394
+ERROR - 2025-01-02 14:57:21 --> Severity: 4096 --> Object of class stdClass could not be converted to string D:\MIS\MIS\application\views\invitation_accepted_view.php 395
+ERROR - 2025-01-02 14:57:31 --> Severity: 4096 --> Object of class stdClass could not be converted to string D:\MIS\MIS\application\views\invitation_accepted_view.php 395
+ERROR - 2025-01-02 14:59:27 --> Severity: 4096 --> Object of class stdClass could not be converted to string D:\MIS\MIS\application\views\invitation_accepted_view.php 393
+ERROR - 2025-01-02 14:59:39 --> Severity: error --> Exception: Cannot use object of type stdClass as array D:\MIS\MIS\application\views\invitation_accepted_view.php 369
+ERROR - 2025-01-02 15:00:00 --> Severity: Notice --> Undefined property: stdClass::$EventName D:\MIS\MIS\application\views\invitation_accepted_view.php 369
+ERROR - 2025-01-02 15:00:01 --> Severity: Notice --> Undefined property: stdClass::$EventName D:\MIS\MIS\application\views\invitation_accepted_view.php 369
+ERROR - 2025-01-02 15:00:24 --> Severity: 4096 --> Object of class stdClass could not be converted to string D:\MIS\MIS\application\views\invitation_accepted_view.php 393
+ERROR - 2025-01-02 15:00:26 --> Severity: 4096 --> Object of class stdClass could not be converted to string D:\MIS\MIS\application\views\invitation_accepted_view.php 393
+ERROR - 2025-01-02 15:00:34 --> Severity: 4096 --> Object of class stdClass could not be converted to string D:\MIS\MIS\application\views\invitation_accepted_view.php 393
+ERROR - 2025-01-02 15:01:12 --> Severity: 4096 --> Object of class stdClass could not be converted to string D:\MIS\MIS\application\views\invitation_accepted_view.php 393
+ERROR - 2025-01-02 15:01:36 --> Severity: 4096 --> Object of class stdClass could not be converted to string D:\MIS\MIS\application\views\invitation_accepted_view.php 398
+ERROR - 2025-01-02 15:05:23 --> Severity: 4096 --> Object of class stdClass could not be converted to string D:\MIS\MIS\application\views\invitation_accepted_view.php 398
+ERROR - 2025-01-02 15:07:58 --> Severity: error --> Exception: Too few arguments to function Invitation::viewAccept(), 1 passed in D:\MIS\MIS\system\core\CodeIgniter.php on line 532 and exactly 2 expected D:\MIS\MIS\application\controllers\Invitation.php 18
+ERROR - 2025-01-02 15:08:02 --> Severity: error --> Exception: Too few arguments to function Invitation::viewAccept(), 1 passed in D:\MIS\MIS\system\core\CodeIgniter.php on line 532 and exactly 2 expected D:\MIS\MIS\application\controllers\Invitation.php 18
+ERROR - 2025-01-02 15:08:36 --> Severity: 4096 --> Object of class stdClass could not be converted to string D:\MIS\MIS\application\views\invitation_accepted_view.php 398
+ERROR - 2025-01-02 15:08:36 --> Severity: 4096 --> Object of class stdClass could not be converted to string D:\MIS\MIS\application\views\invitation_accepted_view.php 398

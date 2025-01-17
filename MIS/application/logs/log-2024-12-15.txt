@@ -1,0 +1,2 @@
+ERROR - 2024-12-15 21:05:05 --> Severity: Core Warning --> PHP Startup: Unable to load dynamic library 'php_mysql.dll' (tried: C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_mysql.dll (The specified module could not be found.), C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_php_mysql.dll.dll (The specified module could not be found.)) Unknown 0
+ERROR - 2024-12-15 21:05:26 --> Severity: Notice --> Undefined property: Message\MultiMessage::$recipient D:\MIS\MIS\vendor\message\src\MultiMessage.php 27

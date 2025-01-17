@@ -1,0 +1,11 @@
+ERROR - 2024-09-25 08:46:54 --> Severity: Core Warning --> PHP Startup: Unable to load dynamic library 'php_mysql.dll' (tried: C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_mysql.dll (The specified module could not be found.), C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_php_mysql.dll.dll (The specified module could not be found.)) Unknown 0
+ERROR - 2024-09-25 08:51:26 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_Dashboard_OverviewCI'. - Invalid query: SP_Dashboard_OverviewCI 2024,1,9,'01',0
+ERROR - 2024-09-25 09:03:46 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_Dashboard_OverviewCI'. - Invalid query: SP_Dashboard_OverviewCI 2024,1,9,'01',0
+ERROR - 2024-09-25 09:08:04 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SP_Dashboard_OverviewCI'. - Invalid query: SP_Dashboard_OverviewCI 2024,1,9,'04',0
+ERROR - 2024-09-25 09:45:20 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Induce'. - Invalid query: SP_Dashboard_MonthlyCase 2024,1,9,'',0
+ERROR - 2024-09-25 09:46:34 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Induce'. - Invalid query: SP_Dashboard_OverviewCase 2024,1,9,'',0
+ERROR - 2024-09-25 09:47:45 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Induce'. - Invalid query: SP_Dashboard_OverviewCase 2024,1,9,'',0
+ERROR - 2024-09-25 09:58:24 --> Severity: error --> Exception: Too few arguments to function Dashboard::getRiskPop(), 1 passed in D:\MIS\MIS\application\controllers\Dashboard.php on line 111 and exactly 2 expected D:\MIS\MIS\application\controllers\Dashboard.php 172
+ERROR - 2024-09-25 10:11:07 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The multi-part identifier "a.Code_Prov_N" could not be bound. - Invalid query: select sum(High) as High, sum(Medium) as Medium, sum(Low) as Low, sum(No) as No
+				from tblRiskPopV2
+				where Year = 2024 and ('' = '' or '' = a.Code_Prov_N)

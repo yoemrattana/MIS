@@ -1,0 +1,14 @@
+{
+	"require": {
+		"guzzlehttp/guzzle": "~6.0",
+		"phpfastcache/phpfastcache": "^8.1",
+		"google/auth": "^1.17"
+	},
+	"autoload": {
+		"psr-4": {
+			"Notification\\": "vendor/mis/",
+			"ourcodeworld\\HelloComposer\\": "vendor/hello-composer/src/",
+			"Message\\": "vendor/message/src"
+		}
+	}
+}

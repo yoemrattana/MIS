@@ -1,0 +1,417 @@
+@font-face {
+	font-family: 'Koh Santepheap';
+	font-weight: normal;
+	src: url(../fonts/KohSantepheapV3-Regular.woff2) format('woff2');
+	unicode-range: U+1780-17FF, U+25CC;
+}
+
+@font-face {
+	font-family: 'Koh Santepheap';
+	font-weight: bold;
+	src: url(../fonts/KohSantepheapV3-Bold.woff2) format('woff2');
+	unicode-range: U+1780-17FF, U+25CC;
+}
+
+body {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Koh Santepheap';
+	background: #D4F1F9;
+	overflow-y: scroll;
+}
+
+body.v2 {
+	overflow: hidden;
+	background: url(/media/assetsV2/images/bg-1.jpg);
+	background-size: cover;
+}
+
+a {
+	word-wrap: break-word;
+	cursor: pointer;
+}
+
+.pull-center {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.pull-middle {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%) !important;
+}
+
+.pull-center.pull-middle {
+	transform: translate(-50%, -50%) !important;
+}
+
+#wrapper {
+	display: table;
+	min-width: 100%;
+	padding: 10px 10px 50px 10px;
+}
+
+#footer {
+	background: #f1f2f3;
+	height: 30px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 90;
+	position: fixed;
+	border-top: 1px solid #ccc;
+	font-size: 14px;
+	line-height: 30px;
+	padding: 0 5px;
+}
+
+@media print {
+	body {
+		background: white;
+	}
+
+	#wrapper {
+		margin-bottom: auto;
+	}
+
+	#footer {
+		display: none;
+	}
+}
+
+#dashboard {
+	max-width: 1028px;
+	margin: 0 auto;
+	background: #fff;
+	border: 1px solid #ccc;
+}
+
+	#dashboard legend {
+		margin-bottom: 0 !important;
+		font-weight: bold;
+		font-size: 17px;
+	}
+
+	#dashboard .btn-primary {
+		width: 100%;
+		position: relative;
+		white-space: normal !important;
+		word-wrap: break-word;
+		background: #D4F1F9;
+		color: #333;
+		text-transform: uppercase;
+		font-size: 13px;
+		margin-bottom: 7px;
+	}
+
+		#dashboard .btn-primary:hover {
+			background-color: #428bca;
+			font-weight: bold;
+		}
+
+.div-viewdata {
+	clear: both;
+	border: 1px solid #ccc;
+	background: #eee;
+	padding: 10px;
+}
+
+.field-view {
+	width: 640px;
+	margin: 0 auto;
+}
+
+	.field-view table {
+		width: 100%;
+	}
+
+.no-padding {
+	padding: 0 !important;
+}
+
+.no-padding-left {
+	padding-left: 0 !important;
+}
+
+.no-padding-right {
+	padding-right: 0 !important;
+}
+
+.no-padding-top {
+	padding-top: 0 !important;
+}
+
+.no-padding-bottom {
+	padding-bottom: 0 !important;
+}
+
+.no-padding-vertical {
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+.no-padding-horizontal {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+
+.no-margin {
+	margin: 0 !important;
+}
+
+.no-margin-left {
+	margin-left: 0 !important;
+}
+
+.no-margin-right {
+	margin-right: 0 !important;
+}
+
+.no-margin-top {
+	margin-top: 0 !important;
+}
+
+.no-margin-bottom {
+	margin-bottom: 0 !important;
+}
+
+.no-margin-vertical {
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+}
+
+.no-margin-horizontal {
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+}
+
+.highcharts-menu hr {
+	margin: 0;
+}
+
+.font12 {
+	font-size: 12px !important;
+}
+
+.font14 {
+	font-size: 14px !important;
+}
+
+.font16 {
+	font-size: 16px !important;
+}
+
+.text-bold {
+	font-weight: bold !important;
+}
+
+.text-default {
+	color: black !important;
+}
+
+tr.selected {
+	background-color: #ffff99 !important;
+}
+
+.relative {
+	position: relative;
+}
+
+.widthauto {
+	width: auto !important;
+}
+
+.width80 {
+	width: 80px !important;
+}
+
+.width100 {
+	width: 100px !important;
+}
+
+.width100p {
+	width: 100% !important;
+}
+
+.width120 {
+	width: 120px !important;
+}
+
+.width150 {
+	width: 150px !important;
+}
+
+.minwidth100 {
+	min-width: 100px;
+}
+
+.minwidth150 {
+	min-width: 150px;
+}
+
+.bg-default {
+	background-color: white !important;
+}
+
+.lh28 {
+	line-height: 28px;
+}
+
+.lh26 {
+	line-height: 26px;
+}
+
+.lh34 {
+	line-height: 34px;
+}
+
+.text-middle {
+	vertical-align: middle !important;
+}
+
+th[align=left] {
+	text-align: left;
+}
+
+th[align=center] {
+	text-align: center;
+}
+
+th[align=right] {
+	text-align: right;
+}
+
+th[valign=top], td[valign=top] {
+	vertical-align: top !important;
+}
+
+th[valign=middle], td[valign=middle] {
+	vertical-align: middle !important;
+}
+
+th[valign=bottom], td[valign=bottom] {
+	vertical-align: bottom !important;
+}
+
+input[type=checkbox], input[type=radio] {
+	vertical-align: middle;
+}
+
+.checkbox.checkbox-lg, .radio.radio-lg {
+	padding-left: 5px;
+}
+
+.checkbox-inline.checkbox-lg, .radio-inline.radio-lg {
+	padding-left: 25px;
+}
+
+.checkbox-lg input[type=checkbox], .radio-lg input[type=radio] {
+	margin: 0 0 0 -25px;
+}
+
+.checkbox-lg input[type=checkbox], input[type=checkbox].checkbox-lg,
+.radio-lg input[type=radio], input[type=radio].radio-lg {
+	width: 20px;
+	height: 20px;
+}
+
+div.fixed-header {
+	position: fixed;
+	top: 0;
+	background-color: white;
+}
+
+	div.fixed-header > table.fixed-header {
+		display: table !important;
+		visibility: visible !important;
+		width: initial !important;
+		min-width: initial !important;
+		max-width: initial !important;
+	}
+
+table.fixed-header thead th[sortable] {
+	cursor: pointer;
+	user-select: none;
+}
+
+	table.fixed-header thead th[sortable]:hover {
+		background-color: #31b0d5;
+	}
+
+	table.fixed-header thead th[sortable]:active {
+		background-color: #269abc;
+		box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+	}
+
+div.fixed-column {
+	position: fixed;
+	left: 0;
+	background-color: white;
+}
+
+div.fixed-header-column {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: white;
+}
+
+.no-border {
+	border: none !important;
+}
+
+.ucase {
+	text-transform: uppercase;
+}
+
+.input-block {
+	display: block !important;
+	width: 100% !important;
+}
+
+.inlineblock {
+	display: inline-block;
+}
+
+.display-block {
+	display: block !important;
+}
+
+input[type=text][readonly].form-control {
+	background-color: white;
+}
+
+.clickable {
+	cursor: pointer;
+}
+
+.bg-thead {
+	background-color: #9AD8ED;
+}
+
+.material-icons {
+	display: table-cell;
+	user-select: none;
+}
+
+.fit-content {
+	width: fit-content;
+}
+
+.dropdown > .btn-block, .dropup > .btn-block {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+	-moz-appearance: textfield;
+}

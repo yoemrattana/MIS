@@ -1,0 +1,21 @@
+ERROR - 2024-12-08 13:38:57 --> Severity: Core Warning --> PHP Startup: Unable to load dynamic library 'php_mysql.dll' (tried: C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_mysql.dll (The specified module could not be found.), C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_php_mysql.dll.dll (The specified module could not be found.)) Unknown 0
+ERROR - 2024-12-08 14:25:10 --> Severity: 4096 --> Object of class stdClass could not be converted to string D:\MIS\MIS\system\core\Output.php 473
+ERROR - 2024-12-08 14:25:40 --> Severity: 4096 --> Object of class stdClass could not be converted to string D:\MIS\MIS\system\core\Output.php 473
+ERROR - 2024-12-08 14:26:50 --> Severity: 4096 --> Object of class stdClass could not be converted to string D:\MIS\MIS\system\core\Output.php 473
+ERROR - 2024-12-08 14:27:07 --> Severity: 4096 --> Object of class stdClass could not be converted to string D:\MIS\MIS\system\core\Output.php 473
+ERROR - 2024-12-08 14:27:13 --> Severity: 4096 --> Object of class stdClass could not be converted to string D:\MIS\MIS\system\core\Output.php 473
+ERROR - 2024-12-08 14:27:30 --> Severity: 4096 --> Object of class stdClass could not be converted to string D:\MIS\MIS\system\core\Output.php 473
+ERROR - 2024-12-08 14:28:03 --> Severity: 4096 --> Object of class stdClass could not be converted to string D:\MIS\MIS\system\core\Output.php 473
+ERROR - 2024-12-08 14:29:06 --> Severity: 4096 --> Object of class stdClass could not be converted to string D:\MIS\MIS\system\core\Output.php 473
+ERROR - 2024-12-08 14:29:12 --> Severity: 4096 --> Object of class stdClass could not be converted to string D:\MIS\MIS\system\core\Output.php 473
+ERROR - 2024-12-08 14:29:54 --> Severity: 4096 --> Object of class stdClass could not be converted to string D:\MIS\MIS\system\core\Output.php 473
+ERROR - 2024-12-08 14:33:51 --> Severity: error --> Exception: Too few arguments to function Invitation::index(), 0 passed in D:\MIS\MIS\system\core\CodeIgniter.php on line 532 and exactly 1 expected D:\MIS\MIS\application\controllers\Invitation.php 6
+ERROR - 2024-12-08 14:33:59 --> Severity: error --> Exception: Too few arguments to function Invitation::index(), 0 passed in D:\MIS\MIS\system\core\CodeIgniter.php on line 532 and exactly 1 expected D:\MIS\MIS\application\controllers\Invitation.php 6
+ERROR - 2024-12-08 14:54:04 --> Severity: 4096 --> Object of class stdClass could not be converted to string D:\MIS\MIS\system\core\Output.php 473
+ERROR - 2024-12-08 16:07:55 --> Severity: Notice --> Undefined offset: 1 D:\MIS\MIS\application\controllers\Event.php 69
+ERROR - 2024-12-08 21:56:22 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'InitUser'. - Invalid query: INSERT INTO "tblEventParticipant" ("ParticipantName", "Organization", "EventID", "InitTime", "InitUser") VALUES (N'safsda', N'sdfa', N'4', N'2024-12-08 21:56:22.679', N'RattanaMIS')
+ERROR - 2024-12-08 22:22:41 --> Severity: 4096 --> Object of class stdClass could not be converted to string D:\MIS\MIS\application\views\invitation_view.php 309
+ERROR - 2024-12-08 22:22:45 --> Severity: 4096 --> Object of class stdClass could not be converted to string D:\MIS\MIS\application\views\invitation_view.php 309
+ERROR - 2024-12-08 22:35:30 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'tblEventParticipant' when IDENTITY_INSERT is set to OFF. - Invalid query: INSERT INTO "tblEventParticipant" ("Rec_ID", "ParticipantName", "EventID", "Comment", "Organization", "WillAttend", "ConfirmedDate") VALUES (N'2', N'ឯកឩត្តម យឹម រតនា', N'4', N'sdafsdaf', N'Digital', 1, N'2024-12-08 22:35:30.773')
+ERROR - 2024-12-08 22:40:06 --> Severity: Notice --> Undefined index: Rec_ID D:\MIS\MIS\application\controllers\Invitation.php 42
+ERROR - 2024-12-08 22:41:02 --> Severity: Notice --> Undefined index: Rec_ID D:\MIS\MIS\application\controllers\Invitation.php 42

@@ -1,0 +1,16 @@
+{
+	"name": "MIS",
+	"short_name": "MIS",
+	"start_url": "/",
+	"display": "standalone",
+	"background_color": "black",
+	"theme_color": "black",
+	"orientation": "portrait-primary",
+	"icons": [
+		{
+			"src": "/media/images/cnm_ios_icon.png",
+			"type": "image/png",
+			"sizes": "200x200"
+		}
+	]
+}

@@ -1,0 +1,94 @@
+ERROR - 2024-09-20 08:44:55 --> Severity: Core Warning --> PHP Startup: Unable to load dynamic library 'php_mysql.dll' (tried: C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_mysql.dll (The specified module could not be found.), C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_php_mysql.dll.dll (The specified module could not be found.)) Unknown 0
+ERROR - 2024-09-20 09:02:48 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]All queries combined using a UNION, INTERSECT or EXCEPT operator must have an equal number of expressions in their target lists. - Invalid query: WITH T as (
+	                select PatientCode, NameK,Age, Sex, Diagnosis, Weight, Month, Year, DateCase, ID as Code_Facility_T, Rec_ID, 'HC' as Type
+	                from tblHFActivityCases
+	                where year = '2024' and Positive = 'P'
+
+                    union all
+                    select PatientCode, NameK,Age, Sex, Diagnosis, Weight, Month, Year, DateCase, HCCode as Code_Facility_T, Rec_ID, 'VMW' as Type,
+                    case when Recrudescence = 1 or Relapse = 1 then 'Recrudescense/Relapse'
+	                    when LocallyAcquired = 1 then 'Locally Acquired'
+	                    when DomesticallyImported = 1 then 'Domestically Imported'
+	                    when InternationalImported = 1 then 'International Imported'
+	                    end  Classify
+	                    from tblVMWActivityCases as a
+	                    join tblCensusVillage as b on a.ID = b.Code_Vill_T
+                    where year = '2024' and Positive = 'P'
+                )
+
+                select a.*, Code_OD_T, Code_Prov_N, c.Rec_ID as CI_ID from T as a
+                join tblHFCodes as b on a.Code_Facility_T = b.Code_Facility_T
+                left join tblCI_HF as c on a.Rec_ID = c.Case_ID and c.Case_Type = a.Type
+                where (Code_Prov_N = '' or '' = '')
+                and (Code_OD_T = '' or '' = '')
+                and (a.Code_Facility_T = '' or '' = '')
+                order by Month
+ERROR - 2024-09-20 09:57:33 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near 'a'. - Invalid query: WITH T as
+				(
+					select ID as Code_Facility_T, Code_Vill_t collate SQL_Latin1_General_CP1_CI_AS as Code_Vill_T, PatientCode,
+					NameK, DateCase, Diagnosis, PatientPhone, Year, Month, concat('HC_', Rec_ID) as Case_ID, PrimaquineDate
+					from tblHFActivityCases
+					where Diagnosis in ('V', 'M') and Year = '2024'
+					and (G6PD = 'Normal' or Primaquine15 > 0 or Primaquine75 > 0)
+
+					union all
+
+					select HCCode as Code_Facility_T, ID as Code_Vill_T, PatientCode,
+					NameK, DateCase, Diagnosis, PatientPhone, Year, Month, concat('VMW_', Rec_ID) as Case_ID, PrimaquineDate
+					from tblVMWActivityCases as a
+					join tblCensusVillage as b on a.ID = b.Code_Vill_T
+					where Diagnosis in ('V', 'M') and Year = '2024'
+					and ((G6PD = 'Normal' and PQTreatment = 'ASMQ + 14 days PQ') or Primaquine15 > 0 or Primaquine75 > 0)
+				)
+
+				select * from
+				(
+					select a.Code_Facility_T, a.Code_Vill_T, Code_OD_T, c.Code_Prov_N, a.PatientCode, NameK, a.DateCase
+						  ,case when Diagnosis = 'V' then 'Pv' when Diagnosis = 'F' then 'Pf' else 'Mix' end as Diagnosis, PatientPhone, Year, Month, Day, a.Case_ID
+						  ,IsReminder, PrimaquineDate
+					from T as a
+					left join tblVMWNotification as b on a.Case_ID = b.CodeCase or concat('VMW_'a.Case_ID) = b.CodeCase  or concat('HC_'a.Case_ID) = b.CodeCase
+					join tblHFCodes as c on a.Code_Facility_T = c.Code_Facility_T
+					left join tblVMWFollowUp as d on cast(a.Case_ID as varchar) = cast(d.Case_ID as varchar)
+					join tblCensusVillage as e on e.Code_Vill_T = a.Code_Vill_T and HaveVMW = 1
+					 where Code_OD_T = '1101'
+				) as sub
+				pivot (
+					count(Day) for day in ([Day3], [D3] , [Day7],  [D7], [Day14])
+				) as p
+				order by DateCase
+ERROR - 2024-09-20 09:57:34 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near 'a'. - Invalid query: WITH T as
+				(
+					select ID as Code_Facility_T, Code_Vill_t collate SQL_Latin1_General_CP1_CI_AS as Code_Vill_T, PatientCode,
+					NameK, DateCase, Diagnosis, PatientPhone, Year, Month, concat('HC_', Rec_ID) as Case_ID, PrimaquineDate
+					from tblHFActivityCases
+					where Diagnosis in ('V', 'M') and Year = '2024'
+					and (G6PD = 'Normal' or Primaquine15 > 0 or Primaquine75 > 0)
+
+					union all
+
+					select HCCode as Code_Facility_T, ID as Code_Vill_T, PatientCode,
+					NameK, DateCase, Diagnosis, PatientPhone, Year, Month, concat('VMW_', Rec_ID) as Case_ID, PrimaquineDate
+					from tblVMWActivityCases as a
+					join tblCensusVillage as b on a.ID = b.Code_Vill_T
+					where Diagnosis in ('V', 'M') and Year = '2024'
+					and ((G6PD = 'Normal' and PQTreatment = 'ASMQ + 14 days PQ') or Primaquine15 > 0 or Primaquine75 > 0)
+				)
+
+				select * from
+				(
+					select a.Code_Facility_T, a.Code_Vill_T, Code_OD_T, c.Code_Prov_N, a.PatientCode, NameK, a.DateCase
+						  ,case when Diagnosis = 'V' then 'Pv' when Diagnosis = 'F' then 'Pf' else 'Mix' end as Diagnosis, PatientPhone, Year, Month, Day, a.Case_ID
+						  ,IsReminder, PrimaquineDate
+					from T as a
+					left join tblVMWNotification as b on a.Case_ID = b.CodeCase or concat('VMW_'a.Case_ID) = b.CodeCase  or concat('HC_'a.Case_ID) = b.CodeCase
+					join tblHFCodes as c on a.Code_Facility_T = c.Code_Facility_T
+					left join tblVMWFollowUp as d on cast(a.Case_ID as varchar) = cast(d.Case_ID as varchar)
+					join tblCensusVillage as e on e.Code_Vill_T = a.Code_Vill_T and HaveVMW = 1
+					 where Code_OD_T = '1101'
+				) as sub
+				pivot (
+					count(Day) for day in ([Day3], [D3] , [Day7],  [D7], [Day14])
+				) as p
+				order by DateCase
+ERROR - 2024-09-20 16:05:18 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'CSO'. - Invalid query: INSERT INTO "tblChecklistStockOD" ("VisitorName", "CSO", "VisitorPosition", "WorkDuration", "VisitDate", "Code_OD_T", "Problem", "Solution", "Detail", "InitUser") VALUES (N'sdfsafd', N'dfsd', N'', N'', N'2024-09-20', N'2301', N'', N'sdfa', N'[{"Question":"2.1.1","Answer":"sdfas"},{"Question":"2.1.2","Answer":""},{"Question":"2.1.3","Answer":""},{"Question":"2.1.4","Answer":""},{"Question":"2.2","Answer":[]},{"Question":"2.3","Answer":""},{"Question":"2.4.1","Answer":""},{"Question":"2.4.2","Answer":""},{"Question":"2.4.3","Answer":""},{"Question":"2.1.A","Answer":""},{"Question":"2.1.A.Reason","Answer":""},{"Question":"2.2.A","Answer":""},{"Question":"2.2.A.Reason","Answer":""},{"Question":"A2.3.1","Answer":[]},{"Question":"A2.3.1.Other","Answer":""},{"Question":"A2.3.2","Answer":""},{"Question":"A2.3.3","Answer":""},{"Question":"A2.3.4","Answer":""},{"Question":"A2.3.5","Answer":""},{"Question":"A2.3.6","Answer":""},{"Question":"A2.3.6.1","Answer":""},{"Question":"A2.3.7","Answer":""},{"Question":"A2.3.7.1","Answer":""},{"Question":"A2.3.8","Answer":""},{"Question":"A2.3.9","Answer":""},{"Question":"A2.3.10","Answer":""},{"Question":"3.1","Answer":""},{"Question":"3.2","Answer":[]},{"Question":"3.2.Other","Answer":""},{"Question":"3.3","Answer":""},{"Question":"3.4","Answer":""},{"Question":"3.4.Other","Answer":""},{"Question":"3.5","Answer":""},{"Question":"3.5.Other","Answer":""},{"Question":"3.6","Answer":""},{"Question":"3.6.Other","Answer":""},{"Question":"stock","Answer":"[]"}]', N'RattanaMIS')

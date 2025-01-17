@@ -1,0 +1,57 @@
+ERROR - 2024-10-31 10:32:59 --> Severity: Core Warning --> PHP Startup: Unable to load dynamic library 'php_mysql.dll' (tried: C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_mysql.dll (The specified module could not be found.), C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_php_mysql.dll.dll (The specified module could not be found.)) Unknown 0
+ERROR - 2024-10-31 10:44:19 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near '.'. - Invalid query: SELECT tblProvince.Name_Prov_K,
+					tblDistrict.Name_Dist_K,
+					tblCommune.Name_Comm_K,
+					tblCensusVillage.Name_Vill_K,
+					tblCensusVillage.Code_Vill_T,
+					tblCensusVillage.VMWType,
+					Name_Regional_K, Name_Unit_E, Name_Group_K
+					tblHFCodes.Name_Facility_K,
+					tblOD.Is_Radical_Cure,
+					tblOD.Is_Radical_Cure_HSD,
+                    tblOD.Is_URC_Stock,
+					isnull(tblCensusVillage.IsLastmile, 0) as IsLastmile,
+					tblHFCodes.IsReminder,
+					tblHFCodes.IsReminder as IsRadicalCureHC,
+                    tblHFCodes.IsFinger,
+                    tblHFCodes.IsRdtPhoto
+					FROM tblCensusVillage
+					JOIN tblProvince ON tblProvince.Code_Prov_T = tblCensusVillage.Code_Prov_T
+					JOIN tblDistrict ON tblDistrict.Code_Dist_T = tblCensusVillage.Code_Dist_T
+					JOIN tblCommune ON tblCommune.Code_Comm_T = tblCensusVillage.Code_Comm_T
+					JOIN tblHFCodes ON tblCensusVillage.HCCode = tblHFCodes.Code_Facility_T
+					JOIN tblOD ON tblOD.Code_OD_T = tblHFCodes.Code_OD_T
+					LEFT JOIN (
+						  select Name_Regional_K, Name_Unit_E, Name_Group_K, Code_Group_T from tblMLGroup as a
+						  join tblMLUnit as b on b.Code_Unit_T = a.Code_Unit_T
+						  join tblMLRegion as c on c.Code_Regional_T = b.Code_Regional_T
+					) as ML on tblCensusVillage.Code_ML = ML.Code_Code_Group_T
+					WHERE tblCensusVillage.Code_Vill_T = '1903030307'
+ERROR - 2024-10-31 10:44:51 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Code_Code_Group_T'. - Invalid query: SELECT tblProvince.Name_Prov_K,
+					tblDistrict.Name_Dist_K,
+					tblCommune.Name_Comm_K,
+					tblCensusVillage.Name_Vill_K,
+					tblCensusVillage.Code_Vill_T,
+					tblCensusVillage.VMWType,
+					Name_Regional_K, Name_Unit_E, Name_Group_K,
+					tblHFCodes.Name_Facility_K,
+					tblOD.Is_Radical_Cure,
+					tblOD.Is_Radical_Cure_HSD,
+                    tblOD.Is_URC_Stock,
+					isnull(tblCensusVillage.IsLastmile, 0) as IsLastmile,
+					tblHFCodes.IsReminder,
+					tblHFCodes.IsReminder as IsRadicalCureHC,
+                    tblHFCodes.IsFinger,
+                    tblHFCodes.IsRdtPhoto
+					FROM tblCensusVillage
+					JOIN tblProvince ON tblProvince.Code_Prov_T = tblCensusVillage.Code_Prov_T
+					JOIN tblDistrict ON tblDistrict.Code_Dist_T = tblCensusVillage.Code_Dist_T
+					JOIN tblCommune ON tblCommune.Code_Comm_T = tblCensusVillage.Code_Comm_T
+					JOIN tblHFCodes ON tblCensusVillage.HCCode = tblHFCodes.Code_Facility_T
+					JOIN tblOD ON tblOD.Code_OD_T = tblHFCodes.Code_OD_T
+					LEFT JOIN (
+						  select Name_Regional_K, Name_Unit_E, Name_Group_K, Code_Group_T from tblMLGroup as a
+						  join tblMLUnit as b on b.Code_Unit_T = a.Code_Unit_T
+						  join tblMLRegion as c on c.Code_Regional_T = b.Code_Regional_T
+					) as ML on tblCensusVillage.Code_ML = ML.Code_Code_Group_T
+					WHERE tblCensusVillage.Code_Vill_T = '1903030307'

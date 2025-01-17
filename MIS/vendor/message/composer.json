@@ -1,0 +1,10 @@
+{
+    "name": "message",
+    "type": "package",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Message\\": "src/"
+        }
+    }
+}

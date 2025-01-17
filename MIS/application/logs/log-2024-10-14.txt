@@ -1,0 +1,92 @@
+ERROR - 2024-10-14 08:38:42 --> Severity: Core Warning --> PHP Startup: Unable to load dynamic library 'php_mysql.dll' (tried: C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_mysql.dll (The specified module could not be found.), C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_php_mysql.dll.dll (The specified module could not be found.)) Unknown 0
+ERROR - 2024-10-14 09:11:20 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'name'. - Invalid query: select * from tblMLGroup order by name
+ERROR - 2024-10-14 09:12:40 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'name'. - Invalid query: select * from tblMLGroup order by name
+ERROR - 2024-10-14 09:13:02 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'name'. - Invalid query: select * from tblMLGroup order by name
+ERROR - 2024-10-14 10:50:38 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near 'Classify'. - Invalid query: WITH T as (
+	                select PatientCode, NameK,Age, Sex, Diagnosis, Weight, Month, Year, DateCase, ID as Code_Facility_T, Code_Vill_t, Rec_ID, 'HC' as Type, case when L1=1 then 'LA' when LC=1 then 'DI' Classify
+	                from tblHFActivityCases
+	                where year = '2024' and Positive = 'P' and (L1=1 or LC=1)
+
+	                union all
+
+	                select PatientCode, NameK,Age, Sex, Diagnosis, Weight, Month, Year, DateCase, HCCode as Code_Facility_T, ISNULL(Address, ID) as Address, Rec_ID, 'VMW' as Type, case when L1=1 then 'LA' when LC=1 then 'DI' Classify
+	                from tblVMWActivityCases as a
+	                join tblCensusVillage as b on a.ID = b.Code_Vill_T
+	                where year = '2024' and Positive = 'P' and (L1=1 or LC=1)
+                )
+
+                select a.*, Code_OD_T, Code_Prov_N, c.Rec_ID as CI_ID, iif(c.Rec_ID is null , 0, 1) as Done
+                ,NotDo, Completed, ReasonNotDo, d.Rec_ID as NoteID, d.ToOD, d.Note, d.Prov_Code, Classify
+                from T as a
+                join tblHFCodes as b on a.Code_Facility_T = b.Code_Facility_T
+                left join tblMRRT_Foci as c on a.Rec_ID = c.Case_ID and c.Case_Type = a.Type
+                left join
+                (
+                    select a.*, Code_Prov_T as Prov_Code from tblMRRTCaseTransfer as  a
+                    join tblOD as b on a.ToOD = b.Code_OD_T
+                )
+                as d on  a.Rec_ID = d.Case_ID and d.Case_Type = a.Type
+                where
+                (Code_Prov_N = '' or '' = '')
+                and (Code_OD_T = '' or '' = '')
+                and (a.Code_Facility_T = '' or '' = '')
+                or d.ToOD = ''
+                order by Month
+ERROR - 2024-10-14 10:50:58 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near 'Classify'. - Invalid query: WITH T as (
+	                select PatientCode, NameK,Age, Sex, Diagnosis, Weight, Month, Year, DateCase, ID as Code_Facility_T, Code_Vill_t, Rec_ID, 'HC' as Type, case when L1=1 then 'LA' when LC=1 then 'DI' Classify End
+	                from tblHFActivityCases
+	                where year = '2024' and Positive = 'P' and (L1=1 or LC=1)
+
+	                union all
+
+	                select PatientCode, NameK,Age, Sex, Diagnosis, Weight, Month, Year, DateCase, HCCode as Code_Facility_T, ISNULL(Address, ID) as Address, Rec_ID, 'VMW' as Type, case when L1=1 then 'LA' when LC=1 then 'DI' Classify End
+	                from tblVMWActivityCases as a
+	                join tblCensusVillage as b on a.ID = b.Code_Vill_T
+	                where year = '2024' and Positive = 'P' and (L1=1 or LC=1)
+                )
+
+                select a.*, Code_OD_T, Code_Prov_N, c.Rec_ID as CI_ID, iif(c.Rec_ID is null , 0, 1) as Done
+                ,NotDo, Completed, ReasonNotDo, d.Rec_ID as NoteID, d.ToOD, d.Note, d.Prov_Code, Classify
+                from T as a
+                join tblHFCodes as b on a.Code_Facility_T = b.Code_Facility_T
+                left join tblMRRT_Foci as c on a.Rec_ID = c.Case_ID and c.Case_Type = a.Type
+                left join
+                (
+                    select a.*, Code_Prov_T as Prov_Code from tblMRRTCaseTransfer as  a
+                    join tblOD as b on a.ToOD = b.Code_OD_T
+                )
+                as d on  a.Rec_ID = d.Case_ID and d.Case_Type = a.Type
+                where
+                (Code_Prov_N = '' or '' = '')
+                and (Code_OD_T = '' or '' = '')
+                and (a.Code_Facility_T = '' or '' = '')
+                or d.ToOD = ''
+                order by Month
+ERROR - 2024-10-14 16:34:15 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near ','. - Invalid query: WITH T as (
+	                select PatientCode, NameK,Age, Sex, Diagnosis, Weight, Month, Year, DateCase, ID as Code_Facility_T, Rec_ID, 'HC' as Type, Classify
+	                from tblHFActivityCases as a
+                    join (
+                        select Case_ID, Case_Type, Classify from tblMRRT_CICC where Classify in ( 'LocallyAcquired', 'DomesticallyImported') and Case_Type = 'HC'
+                    ) as b on a.Rec_ID = b.Case_ID
+	                where year = '2024' and Positive = 'P'
+
+	                union all
+
+	                select PatientCode, NameK,Age, Sex, Diagnosis, Weight, Month, Year, DateCase, HCCode as Code_Facility_T, Rec_ID, 'VMW' as Type, Classify
+	                from tblVMWActivityCases as a
+	                join tblCensusVillage as b on a.ID = b.Code_Vill_T
+                    join (
+                        select Case_ID, Case_Type, Classify from tblMRRT_CICC where Classify in ( 'LocallyAcquired', 'DomesticallyImported') and Case_Type = 'VMW'
+                    ) as c on a.Rec_ID = c.Case_ID
+	                where year = '2024' and Positive = 'P'
+                )
+
+                select a.*, Code_OD_T, Code_Prov_N, c.Rec_ID as CI_ID , Classify, ,NotDo, Completed, ReasonNotDo from T as a
+                join tblHFCodes as b on a.Code_Facility_T = b.Code_Facility_T
+                left join tblRACDT as c on a.Rec_ID = c.Case_ID and c.Case_Type = a.Type
+                left join tblMRRTCaseTransfer as d on  a.Rec_ID = d.Case_ID and d.Case_Type = a.Type
+                where b.IsTarget =1 and (Code_Prov_N = '' or '' = '')
+                and (Code_OD_T = '' or '' = '')
+                and (a.Code_Facility_T = '' or '' = '')
+                or d.ToOD = ''
+                order by Month desc

@@ -1,0 +1,5 @@
+ERROR - 2024-09-10 10:45:33 --> Severity: Core Warning --> PHP Startup: Unable to load dynamic library 'php_mysql.dll' (tried: C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_mysql.dll (The specified module could not be found.), C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_php_mysql.dll.dll (The specified module could not be found.)) Unknown 0
+ERROR - 2024-09-10 10:46:20 --> Severity: Notice --> Array to string conversion D:\MIS\MIS\system\database\DB_driver.php 1481
+ERROR - 2024-09-10 10:47:35 --> Severity: Notice --> Undefined index: Value D:\MIS\MIS\application\controllers\ChecklistPv.php 95
+ERROR - 2024-09-10 10:54:50 --> Severity: Notice --> Array to string conversion D:\MIS\MIS\system\database\DB_driver.php 1481
+ERROR - 2024-09-10 14:47:39 --> Severity: Core Warning --> PHP Startup: Unable to load dynamic library 'php_mysql.dll' (tried: C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_mysql.dll (The specified module could not be found.), C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_php_mysql.dll.dll (The specified module could not be found.)) Unknown 0

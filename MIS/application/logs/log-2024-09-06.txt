@@ -1,0 +1,13 @@
+ERROR - 2024-09-06 08:43:56 --> Severity: Core Warning --> PHP Startup: Unable to load dynamic library 'php_mysql.dll' (tried: C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_mysql.dll (The specified module could not be found.), C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_php_mysql.dll.dll (The specified module could not be found.)) Unknown 0
+ERROR - 2024-09-06 08:50:31 --> Severity: Notice --> Undefined index: Value D:\MIS\MIS\application\controllers\ChecklistPv.php 94
+ERROR - 2024-09-06 09:37:19 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot truncate table 'tblChecklistPvAttribute' because it is being referenced by a FOREIGN KEY constraint. - Invalid query: TRUNCATE TABLE "tblChecklistPvAttribute"
+ERROR - 2024-09-06 14:03:19 --> Severity: Core Warning --> PHP Startup: Unable to load dynamic library 'php_mysql.dll' (tried: C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_mysql.dll (The specified module could not be found.), C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_php_mysql.dll.dll (The specified module could not be found.)) Unknown 0
+ERROR - 2024-09-06 14:04:19 --> Severity: error --> Exception: Call to undefined method Pv::getField() D:\MIS\MIS\application\controllers\api-checklist\v2\Pv.php 20
+ERROR - 2024-09-06 14:21:01 --> Severity: Notice --> Undefined index: username D:\MIS\MIS\application\controllers\api-checklist\v2\Pv.php 57
+ERROR - 2024-09-06 14:21:45 --> Severity: Notice --> Array to string conversion D:\MIS\MIS\system\database\DB_driver.php 1529
+ERROR - 2024-09-06 14:26:54 --> Severity: Notice --> Array to string conversion D:\MIS\MIS\system\database\DB_driver.php 1529
+ERROR - 2024-09-06 14:28:03 --> Severity: Notice --> Array to string conversion D:\MIS\MIS\system\database\DB_driver.php 1529
+ERROR - 2024-09-06 14:28:06 --> Severity: Notice --> Array to string conversion D:\MIS\MIS\system\database\DB_driver.php 1529
+ERROR - 2024-09-06 14:29:43 --> Severity: Notice --> Array to string conversion D:\MIS\MIS\system\database\DB_driver.php 1529
+ERROR - 2024-09-06 14:32:11 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Visible'. - Invalid query: INSERT INTO "tblCheckListPvValue" ("AttributeID", "Visible", "Value_ID", "ParentID", "Value", "Score") VALUES (1, 1, 207, 3, NULL, 0)
+ERROR - 2024-09-06 14:33:39 --> Query error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'Visible'. - Invalid query: INSERT INTO "tblCheckListPvValue" ("AttributeID", "Visible", "ParentID", "Score") VALUES (1, 1, 3, 0)

@@ -1,0 +1,8 @@
+ERROR - 2025-01-10 08:28:26 --> Severity: Core Warning --> PHP Startup: Unable to load dynamic library 'php_mysql.dll' (tried: C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_mysql.dll (The specified module could not be found.), C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_php_mysql.dll.dll (The specified module could not be found.)) Unknown 0
+ERROR - 2025-01-10 15:00:12 --> Severity: Core Warning --> PHP Startup: Unable to load dynamic library 'php_mysql.dll' (tried: C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_mysql.dll (The specified module could not be found.), C:\Program Files (x86)\IIS Express\PHP\v7.3\ext\php_php_mysql.dll.dll (The specified module could not be found.)) Unknown 0
+ERROR - 2025-01-10 15:03:03 --> Severity: error --> Exception: Call to undefined method Dashboard::getRiskPop() D:\MIS\MIS\application\controllers\Dashboard.php 114
+ERROR - 2025-01-10 15:37:43 --> Severity: Notice --> Undefined property: Dashboard::$Dashboard_model D:\MIS\MIS\application\controllers\Dashboard.php 75
+ERROR - 2025-01-10 15:43:33 --> Severity: error --> Exception: syntax error, unexpected '$cache' (T_VARIABLE) D:\MIS\MIS\application\controllers\Cron.php 195
+ERROR - 2025-01-10 15:44:30 --> Severity: error --> Exception: syntax error, unexpected '$cache' (T_VARIABLE) D:\MIS\MIS\application\controllers\Cron.php 195
+ERROR - 2025-01-10 15:45:11 --> Severity: error --> Exception: syntax error, unexpected 'sleep' (T_STRING) D:\MIS\MIS\application\controllers\Cron.php 198
+ERROR - 2025-01-10 15:45:12 --> Severity: error --> Exception: syntax error, unexpected 'sleep' (T_STRING) D:\MIS\MIS\application\controllers\Cron.php 198
